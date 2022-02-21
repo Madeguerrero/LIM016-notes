@@ -1,0 +1,9 @@
+img {
+  width: 100%;
+}
+.register {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: hotpink;
+}
