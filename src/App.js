@@ -1,12 +1,7 @@
 import React from "react";
 import "./App.css";
-import Index from "./components/home/index";
-
+import Home from "./components/home/home";
 
 export default function App() {
-  return (
-    <Index>
-    </Index>
-   
-  );
+  return <Home></Home>;
 }

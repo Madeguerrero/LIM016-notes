@@ -16,7 +16,6 @@
   color: white;
 }
 
-
 .conteiner {
   background-image: url("../src/assets/img/notes.jpg");
   background-size: cover;
@@ -29,24 +28,56 @@ img {
 .register {
   display: flex;
 }
+/* ----- design banner ----- */
 .container-banner {
-  background-color:rgb(5,14,95);
+  background-color: rgb(5, 14, 95);
   background-size: 10%;
   height: 23vh;
 }
 
-#search{
+#search {
   margin-right: 35px;
   border-radius: 10px;
   width: 350px;
   height: 30px;
   text-align: center;
-  float:right;
-  margin-top: 120px;
+  float: right;
+  margin-top: 100px;
 }
 
-
-.banner{
+.banner {
   height: 30%;
+}
 
+#faMagnifyingGlass {
+  display: flex;
+  max-width: 100px;
+  color: rgb(156, 156, 158);
+  float: right;
+}
+/* ------- design options --------*/
+.conteiner-option {
+  flex-direction: column;
+}
+.menu {
+  background-color: rgb(191, 180, 192);
+  margin-top: 99px;
+  max-width: 300px;
+  height: 100vh;
+  justify-content: space-between;
+}
+.create {
+  margin-left: 10px;
+}
+.notes {
+  margin-left: 10px;
+}
+.bin {
+  margin-left: 10px;
+}
+.settings {
+  margin-left: 10px;
+}
+.user {
+  margin-left: 10px;
 }
