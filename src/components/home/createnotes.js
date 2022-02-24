@@ -1,18 +1,16 @@
-import React from "react";
 import Banner from "./banner";
-import Delete from "./delete";
-import Notes from "./notes";
 import Option from "./option";
 
-const Home = () => {
+const CreateNotes = () => {
   return (
     <section className="container-banner">
       <Banner />
       <Option />
-      <Notes />
-      <Delete />
+      <div className="create-notes">
+        <input type="text" placeholder="Insert Tittle..."></input>
+      </div>
     </section>
   );
 };
 
-export default Home;
+export default CreateNotes;

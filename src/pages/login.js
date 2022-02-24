@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 function Login() {
   return (
     <section className="conteiner">
@@ -7,7 +9,9 @@ function Login() {
         <input type="email" placeholder="Enter your username"></input>
         <input type="password" placeholder="Enter your Password"></input>
         <p>Forgot Password?</p>
-        <button>Log in</button>
+        <button>
+          <Link to="/home">Login</Link>{" "}
+        </button>
         <p>or create account using social media</p>
         <button>Log in with Facebook</button>
         <button>Log in with Google</button>
