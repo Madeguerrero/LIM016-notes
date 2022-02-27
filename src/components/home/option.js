@@ -6,6 +6,7 @@ import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
+import CreateNotes from "./createnotes";
 
 const linkStyle = {
   textDecoration: "none",
@@ -49,6 +50,7 @@ const Option = (props) => {
             Delete
           </Link>
         </div>
+        <CreateNotes />
       </main>
     </div>
   );

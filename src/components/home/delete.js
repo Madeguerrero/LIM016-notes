@@ -6,6 +6,7 @@ const Delete = () => {
     <section className="container-banner">
       <Banner />
       <Option />
+      <div className="revomeNotes"></div>
     </section>
   );
 };

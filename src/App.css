@@ -7,15 +7,6 @@
   text-align: center;
 }
 
-.nav-links {
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-  color: white;
-}
-
 .conteiner {
   background-image: url("../src/assets/img/notes.jpg");
   background-size: cover;
@@ -30,7 +21,18 @@ img {
 }
 /* ----- design banner ----- */
 .container-banner {
-  background-color: rgb(5, 14, 95);
+  background: #0955a1; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #021b79,
+    #0575e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #021b79,
+    #0575e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   background-size: 10%;
   height: 23vh;
 }
@@ -87,6 +89,26 @@ Link {
   text-decoration: none;
 }
 /* ------ pagina inicial ------- */
-.conteiner {
+.conteiner-start {
   justify-content: center;
+  border-style: solid;
+  text-align: center;
+  border-color: rgb(251, 254, 216);
+  border-radius: 20px;
+  width: 350px;
+  height: 450px;
+}
+
+.logo {
+  max-width: 500px;
+}
+#logo-inicio {
+  width: 320px;
+}
+/* ------- createNotes ------ */
+.notesCreate {
+  border-style: solid;
+  max-width: 400px;
+  background-color: rgb(251, 254, 216);
+  margin: 0 auto;
 }

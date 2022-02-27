@@ -7,11 +7,13 @@ const Banner = () => {
   return (
     <div className="banner">
       <img src={principalLogo} alt="imagenDeLogo" id="img_banner"></img>
-
-      <input type="search" placeholder="Buscar  " id="search"></input>
-      <div id="faMagnifyingGlass">
-        <FontAwesomeIcon icon={faMagnifyingGlass} />
-      </div>
+      <input
+        type="search"
+        placeholder="Buscar  "
+        id="search"
+        style={<FontAwesomeIcon icon={faMagnifyingGlass} />}
+      ></input>
+      <div id="faMagnifyingGlass"></div>
     </div>
   );
 };
