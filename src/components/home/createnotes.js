@@ -5,22 +5,31 @@ import { useState } from "react";
 
 const CreateNotes = () => {
   const [value, setValue] = useState("");
-  const handleChange = (e) => setValue(e.target.value);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(value);
+  };
+
   return (
     <section className="container-banner">
       <Banner />
       <Option />
-      <div>
-        <textarea
-          type="text"
-          placeholder="Insert Tittle..."
-          className="notesCreate"
-          rows="20"
-          cols="40"
-          value={value}
-          onChange={handleChange}
-        />
-      </div>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <textarea
+            type="text"
+            placeholder="Insert Tittle..."
+            className="notesCreate"
+            rows="20"
+            cols="40"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+          />
+          <button value="Submit" className="btn-submit" alt="submit-checkout">
+            guardar
+          </button>
+        </div>
+      </form>
     </section>
   );
 };
