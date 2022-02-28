@@ -32,31 +32,37 @@ img {
     #021b79,
     #0575e6
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
   background-size: 10%;
   height: 23vh;
 }
-
-#search {
-  margin-right: 35px;
-  border-radius: 10px;
-  width: 350px;
-  height: 30px;
-  text-align: center;
+.search-icon {
+  position: relative;
   float: right;
-  margin-top: 100px;
+  width: 350px;
 }
-
+#search {
+  height: 30px;
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 100px;
+  margin-right: 35px;
+}
+.icon {
+  color: rgb(156, 156, 158);
+  top: 140%;
+  transform: translateY(-140%);
+}
 .banner {
   height: 30%;
 }
 
-#faMagnifyingGlass {
+/*#faMagnifyingGlass {
   display: flex;
   max-width: 100px;
   color: rgb(156, 156, 158);
   float: right;
-}
+}*/
 /* ------- design options --------*/
 .conteiner-option {
   flex-direction: column;
@@ -108,7 +114,7 @@ Link {
 /* ------- createNotes ------ */
 .notesCreate {
   border-style: solid;
-  max-width: 400px;
+  width: 400px;
   background-color: rgb(251, 254, 216);
-  margin: 0 auto;
+  margin-left: 50px;
 }

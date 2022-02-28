@@ -6,7 +6,6 @@ import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
-import CreateNotes from "./createnotes";
 
 const linkStyle = {
   textDecoration: "none",
@@ -31,7 +30,10 @@ const Option = (props) => {
         <hr></hr>
         <br></br>
         <div className="create">
-          <FontAwesomeIcon icon={faPenToSquare} />
+          <FontAwesomeIcon
+            icon={faPenToSquare}
+            className="hover:text-blue-500"
+          />
           <Link to="/createnotes" style={linkStyle}>
             Create
           </Link>
@@ -50,7 +52,6 @@ const Option = (props) => {
             Delete
           </Link>
         </div>
-        <CreateNotes />
       </main>
     </div>
   );
