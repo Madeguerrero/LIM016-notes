@@ -3,6 +3,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
 
@@ -45,3 +46,16 @@ async function getCities(db) {
   const cityList = citySnapshot.docs.map((doc) => doc.data());
   return cityList;
 }
+
+const auth = getAuth();
+// eslint-disable-next-line no-undef
+signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });

@@ -13,23 +13,25 @@ const CreateNotes = () => {
   return (
     <section className="container-banner">
       <Banner />
-      <Option />
-      <form onSubmit={handleSubmit}>
-        <div>
-          <textarea
-            type="text"
-            placeholder="Insert Tittle..."
-            className="notesCreate"
-            rows="20"
-            cols="40"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
-          <button value="Submit" className="btn-submit" alt="submit-checkout">
-            guardar
-          </button>
-        </div>
-      </form>
+      <div className="optionForm">
+        <Option />
+        <form onSubmit={handleSubmit}>
+          <div>
+            <textarea
+              type="text"
+              placeholder=" Insert Tittle..."
+              className="notesCreate"
+              rows="20"
+              cols="40"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+            />
+            <button value="Submit" className="btn-submit" alt="submit-checkout">
+              guardar
+            </button>
+          </div>
+        </form>
+      </div>
     </section>
   );
 };

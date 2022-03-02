@@ -54,7 +54,7 @@ img {
   transform: translateY(-140%);
 }
 .banner {
-  height: 30%;
+  height: 100%;
 }
 
 /*#faMagnifyingGlass {
@@ -66,12 +66,10 @@ img {
 /* ------- design options --------*/
 .conteiner-option {
   flex-direction: column;
-  max-width: 80%;
+  max-width: 100%;
 }
 .menu {
   background-color: rgb(191, 180, 192);
-  margin-top: 98px;
-  max-width: 300px;
   height: 100vh;
   justify-content: space-between;
 }
@@ -94,6 +92,10 @@ img {
 Link {
   text-decoration: none;
 }
+.optionForm {
+  display: flex;
+  justify-content: space-between;
+}
 /* ------ pagina inicial ------- */
 .conteiner-start {
   justify-content: center;
@@ -114,6 +116,7 @@ Link {
 /* ------- createNotes ------ */
 .notesCreate {
   border-style: solid;
+  border-radius: 10px;
   width: 400px;
   background-color: rgb(251, 254, 216);
   margin-left: 50px;
