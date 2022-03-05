@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import { alpha, styled } from "@mui/material/styles";
+import { crearUsuario } from "../firebaseConfi";
 
 const signLogo = new URL("../assets/img/logo.png", import.meta.url);
 
@@ -32,9 +33,34 @@ const RedditTextField = styled((props) => (
 
 const SignUp = () => {
   // const classes = useStyles();
-  const userRegister = (user) => {
-    signInWithEmailAndPassword(user.email, user.password);
+    const userRegister = (user) => {
+      const inputsName=document.getElementById("outlined-disabled").value;
+      const inputsEmail=document.getElementById("outlined-email").value;
+      const inputsPassword=document.getElementById("outlined-password-uno").value;
+      const inputRePassword=document.getElementById("outlined-password-dos").value;
+      if (inputsPassword=== inputRePassword){
+          crearUsuario(inputsEmail, inputsPassword).then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            console.log(user.uid)
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(error)
+            // ..
+          });
+        
+
+      } else {
+        console.log("Error en el password")
+      }
+      console.log(inputsName)
+
+    //signInWithEmailAndPassword(user.email, user.password); no va
   };
+  
   return (
     <section className="conteiner">
       <div className="logo">
@@ -43,27 +69,30 @@ const SignUp = () => {
       <form className="register">
         <TextField
           required
+          style={{background:"white"}}
+          variant= "filled"
           id="outlined-disabled"
           label="Required"
           color="success"
-          defaultValue="Name"
+          //defaultValue="Name"
+          placeholder="Name"
         />
         <TextField
           required
-          id="outlined-required"
+          id="outlined-email"
           label="Required"
           defaultValue="Email"
         />
         <TextField
           required
-          id="outlined-required"
+          id="outlined-password-uno"
           label="Password"
           type="password"
           defaultValue="Password"
         />
         <TextField
           required
-          id="outlined-required"
+          id="outlined-password-dos"
           label="Password"
           type="password"
           defaultValue="Confirm Password"
@@ -76,7 +105,7 @@ const SignUp = () => {
           style={{ marginTop: 11 }}
         />
       </form>
-      <button>Create Account</button>
+      <button onClick={userRegister}>Create Account</button>
       <p>
         Already have account?<Link to="/login">Log in Here</Link>
       </p>
