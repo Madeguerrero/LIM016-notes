@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ingresarCorreoContrasenha } from "../firebaseConfi";
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //import faFacebook from "@fortawesome/free-solid-svg-icons";
@@ -17,6 +17,7 @@ function Login() {
         const user = userCredential.user;
         // ...
         console.log(user.uid);
+        localStorage.setItem("myid", user.uid);
         navigate("/createnotes");
       })
       .catch((error) => {
@@ -46,17 +47,18 @@ function Login() {
           <p className="paragraph2">or create account using social media</p>
           <button className="facebook-button">Log in with Facebook</button>
           <button className="google-button">Log in with Google</button>
-          <p className="paragraph2">
-            Don't have account?
-            <a href="signup" className="navSignup">
-              Sign Up
-            </a>
-          </p>
         </form>
+        <p className="paragraph2">
+          Don't have account?
+          <a href="signup" className="navSignup">
+            Sign Up
+          </a>
+        </p>
       </div>
     </section>
   );
 }
-export default Login;
+export default Login
+
 
 //<Link to="/home">Login</Link>{" "}

@@ -7,6 +7,8 @@ import {
   collection,
   getDocs,
   addDoc,
+  where,
+  query,
 } from "firebase/firestore/lite";
 import {
   createUserWithEmailAndPassword,
@@ -68,3 +70,16 @@ export const ingresoBaseDatos = (nameColection, data) => {
   const funcionAgregar = addDoc(collectionReferencia, data);
   return funcionAgregar;
 };
+export const getAllNotes = (nameColection,idUser) =>{
+  const colRef=query(collection(db, nameColection), where("creator", "==",idUser))
+  const notes= getDocs(colRef).then(docs=>{
+    const arrayNotes= [] 
+    docs.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      arrayNotes.push(doc.data());
+    });
+    return arrayNotes
+
+  })
+ return notes;
+}

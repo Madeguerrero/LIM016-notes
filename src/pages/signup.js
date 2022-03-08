@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
+//import { signInWithEmailAndPassword } from "firebase/auth";
 import React from "react";
 import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
@@ -21,8 +21,10 @@ const styleTextField = {
 
 const SignUp = () => {
   // const classes = useStyles();
-  const userRegister = (user) => {
-    const inputsName = document.getElementById("outlined-disabled").value;
+  const userRegister = (e) => {
+    e.preventDefault(); //para que no se recargue la página
+    console.log(e);
+    const inputsName = document.getElementById("outlined-Name").value;
     const inputsEmail = document.getElementById("outlined-email").value;
     const inputsPassword = document.getElementById(
       "outlined-password-uno"
@@ -31,6 +33,7 @@ const SignUp = () => {
       "outlined-password-dos"
     ).value;
     if (inputsPassword === inputRePassword) {
+      console.log("coinciden contraseñas")
       crearUsuario(inputsEmail, inputsPassword)
         .then((userCredential) => {
           // Signed in
@@ -106,10 +109,10 @@ const SignUp = () => {
 
 export default SignUp;
 
-/*<RedditTextField
-label="Password"
-defaultValue="Password"
-id="reddit-input"
-variant="filled"
-style={{ marginTop: 11 }}
-/>*/
+//<RedditTextField
+//label="Password"
+//defaultValue="Password"
+//id="reddit-input"
+//variant="filled"
+//style={{ marginTop: 11 }}
+//>
