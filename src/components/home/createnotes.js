@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "./banner";
 import Option from "./option";
 import { useState } from "react";
+//import MdDeleteForever from "react-icons/md";
 
 const CreateNotes = () => {
   const [value, setValue] = useState("");
@@ -37,3 +38,4 @@ const CreateNotes = () => {
 };
 
 export default CreateNotes;
+//<MdDeleteForever className="icon-delete" size="1.3em" />

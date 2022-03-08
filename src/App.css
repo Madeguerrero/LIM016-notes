@@ -12,6 +12,8 @@
   background-size: cover;
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 img {
   width: 15%;
@@ -98,13 +100,24 @@ Link {
 }
 /* ------ pagina inicial ------- */
 .conteiner-start {
-  justify-content: center;
   border-style: solid;
   text-align: center;
   border-color: rgb(251, 254, 216);
   border-radius: 20px;
   width: 350px;
-  height: 450px;
+  height: 500px;
+  margin-top: 60px;
+}
+.conteiner-start::after {
+  content: "";
+  background-color: rgb(236, 238, 246);
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 .logo {
@@ -112,6 +125,74 @@ Link {
 }
 #logo-inicio {
   width: 320px;
+}
+.user-identify {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: grid;
+}
+/* ------- Login -------- */
+
+#logo-login {
+  width: 200px;
+  display: block;
+  margin: 0px auto;
+}
+.conteiner-login {
+  border-style: solid;
+  border-color: rgb(251, 254, 216);
+  border-radius: 20px;
+  width: 350px;
+  height: 500px;
+  margin-top: 60px;
+}
+.paragraph1 {
+  color: rgb(255, 193, 7);
+}
+.paragraph2 {
+  color: white;
+}
+.navSignup {
+  color: rgb(255, 193, 7);
+  text-decoration: none;
+}
+.facebook-button {
+  border-radius: 15px;
+  background-color: rgb(77, 68, 187);
+  border-color: rgb(77, 68, 187);
+}
+.google-button {
+  border-radius: 15px;
+  background-color: rgb(114, 56, 135);
+  border-color: rgb(114, 56, 135);
+}
+.login-button {
+  background: none;
+  color: purple;
+  border: solid rgb(251, 254, 216);
+  border-radius: 10px;
+  width: 100px;
+}
+.login {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#correo {
+  border: solid rgb(251, 254, 216);
+  border-radius: 10px;
+  background: rgb(251, 254, 216);
+  color: rgb(156, 156, 158);
+}
+#contraseña {
+  border: solid rgb(251, 254, 216);
+  border-radius: 10px;
+  background: rgb(251, 254, 216);
+  color: rgb(156, 156, 158);
 }
 /* ------- createNotes ------ */
 .notesCreate {

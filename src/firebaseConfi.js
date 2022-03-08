@@ -2,8 +2,17 @@
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  addDoc,
+} from "firebase/firestore/lite";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
 
@@ -49,5 +58,7 @@ async function getCities(db) {
 
 const auth = getAuth();
 // eslint-disable-next-line no-undef
-export const ingresarCorreoContrasenha= (email, password) => signInWithEmailAndPassword(auth, email, password)
-export const crearUsuario=(email,password)=>createUserWithEmailAndPassword(auth,email,password)
+export const ingresarCorreoContrasenha = (email, password) =>
+  signInWithEmailAndPassword(auth, email, password);
+export const crearUsuario = (email, password) =>
+  createUserWithEmailAndPassword(auth, email, password);
