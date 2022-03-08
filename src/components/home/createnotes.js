@@ -2,13 +2,20 @@ import React from "react";
 import Banner from "./banner";
 import Option from "./option";
 import { useState } from "react";
-//import MdDeleteForever from "react-icons/md";
+import { ingresoBaseDatos } from "../../firebaseConfi";
 
 const CreateNotes = () => {
   const [value, setValue] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(value);
+    ingresoBaseDatos("notas", {
+      title: "title_notas",
+      description: value,
+      creator: "id_user",
+    }).then((doc) => {
+      console.log(doc.id);
+    });
   };
 
   return (

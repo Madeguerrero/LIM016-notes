@@ -197,27 +197,38 @@ Link {
 }
 
 /* ------- sign up ---------- */
+
+.conteiner-signup {
+  border: solid rgb(251, 254, 216);
+  border-radius: 20px;
+  width: 350px;
+  height: 500px;
+  margin-top: 60px;
+}
 .register {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .signlogo {
-  width: 200px;
+  width: 180px;
+  height: 160px;
   display: block;
   margin: 0px auto;
+  padding-top: 10px;
 }
 .button-sign {
   border-radius: 15px;
   background-color: rgb(77, 68, 187);
   border-color: rgb(77, 68, 187);
-  width: 300px;
+  width: 250px;
   height: 40px;
   color: white;
+}
+.p-count {
+  color: white;
+  margin-top: 10px;
 }
 /* ------- createNotes ------ */
 .notesCreate {

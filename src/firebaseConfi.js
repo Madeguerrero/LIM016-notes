@@ -62,3 +62,9 @@ export const ingresarCorreoContrasenha = (email, password) =>
   signInWithEmailAndPassword(auth, email, password);
 export const crearUsuario = (email, password) =>
   createUserWithEmailAndPassword(auth, email, password);
+
+export const ingresoBaseDatos = (nameColection, data) => {
+  const collectionReferencia = collection(db, nameColection);
+  const funcionAgregar = addDoc(collectionReferencia, data);
+  return funcionAgregar;
+};
