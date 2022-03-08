@@ -46,13 +46,13 @@ function Login() {
           <p className="paragraph2">or create account using social media</p>
           <button className="facebook-button">Log in with Facebook</button>
           <button className="google-button">Log in with Google</button>
+          <p className="paragraph2">
+            Don't have account?
+            <a href="signup" className="navSignup">
+              Sign Up
+            </a>
+          </p>
         </form>
-        <p className="paragraph2">
-          Don't have account?
-          <a href="signup" className="navSignup">
-            Sign Up
-          </a>
-        </p>
       </div>
     </section>
   );

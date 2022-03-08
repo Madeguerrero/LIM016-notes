@@ -33,34 +33,37 @@ const RedditTextField = styled((props) => (
 
 const SignUp = () => {
   // const classes = useStyles();
-    const userRegister = (user) => {
-      const inputsName=document.getElementById("outlined-disabled").value;
-      const inputsEmail=document.getElementById("outlined-email").value;
-      const inputsPassword=document.getElementById("outlined-password-uno").value;
-      const inputRePassword=document.getElementById("outlined-password-dos").value;
-      if (inputsPassword=== inputRePassword){
-          crearUsuario(inputsEmail, inputsPassword).then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
-            console.log(user.uid)
-            // ...
-          })
-          .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(error)
-            // ..
-          });
-        
-
-      } else {
-        console.log("Error en el password")
-      }
-      console.log(inputsName)
+  const userRegister = (user) => {
+    const inputsName = document.getElementById("outlined-disabled").value;
+    const inputsEmail = document.getElementById("outlined-email").value;
+    const inputsPassword = document.getElementById(
+      "outlined-password-uno"
+    ).value;
+    const inputRePassword = document.getElementById(
+      "outlined-password-dos"
+    ).value;
+    if (inputsPassword === inputRePassword) {
+      crearUsuario(inputsEmail, inputsPassword)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user.uid);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(error);
+          // ..
+        });
+    } else {
+      console.log("Error en el password");
+    }
+    console.log(inputsName);
 
     //signInWithEmailAndPassword(user.email, user.password); no va
   };
-  
+
   return (
     <section className="conteiner">
       <div className="logo">
@@ -69,8 +72,8 @@ const SignUp = () => {
       <form className="register">
         <TextField
           required
-          style={{background:"white"}}
-          variant= "filled"
+          style={{ background: "white" }}
+          variant="filled"
           id="outlined-disabled"
           label="Required"
           color="success"
@@ -99,16 +102,19 @@ const SignUp = () => {
         />
         <RedditTextField
           label="Password"
-          defaultValue="react-reddit"
+          defaultValue="Password"
           id="reddit-input"
           variant="filled"
           style={{ marginTop: 11 }}
         />
+
+        <button className="button-sign" onClick={userRegister}>
+          Create Account
+        </button>
+        <p>
+          Already have account?<Link to="/login">Log in Here</Link>
+        </p>
       </form>
-      <button onClick={userRegister}>Create Account</button>
-      <p>
-        Already have account?<Link to="/login">Log in Here</Link>
-      </p>
     </section>
   );
 };

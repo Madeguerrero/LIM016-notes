@@ -18,9 +18,6 @@
 img {
   width: 15%;
 }
-.register {
-  display: flex;
-}
 /* ----- design banner ----- */
 .container-banner {
   background: #0955a1; /* fallback for old browsers */
@@ -160,11 +157,15 @@ Link {
   border-radius: 15px;
   background-color: rgb(77, 68, 187);
   border-color: rgb(77, 68, 187);
+  width: 300px;
+  color: white;
 }
 .google-button {
   border-radius: 15px;
   background-color: rgb(114, 56, 135);
   border-color: rgb(114, 56, 135);
+  width: 300px;
+  color: white;
 }
 .login-button {
   background: none;
@@ -193,6 +194,30 @@ Link {
   border-radius: 10px;
   background: rgb(251, 254, 216);
   color: rgb(156, 156, 158);
+}
+
+/* ------- sign up ---------- */
+.register {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signlogo {
+  width: 200px;
+  display: block;
+  margin: 0px auto;
+}
+.button-sign {
+  border-radius: 15px;
+  background-color: rgb(77, 68, 187);
+  border-color: rgb(77, 68, 187);
+  width: 300px;
+  height: 40px;
+  color: white;
 }
 /* ------- createNotes ------ */
 .notesCreate {
