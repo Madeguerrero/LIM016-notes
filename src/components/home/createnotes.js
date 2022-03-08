@@ -12,7 +12,7 @@ const CreateNotes = () => {
     ingresoBaseDatos("notas", {
       title: "title_notas",
       description: value,
-      creator: "id_user",
+      creator: localStorage.getItem("myid")
     }).then((doc) => {
       console.log(doc.id);
     });

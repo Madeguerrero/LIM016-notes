@@ -6,6 +6,7 @@ import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
+import { getAllNotes } from "../../firebaseConfi";
 
 const linkStyle = {
   textDecoration: "none",
@@ -13,6 +14,12 @@ const linkStyle = {
 };
 
 const Option = (props) => {
+  const functionFetch= async()=>{
+    const idUser = localStorage.getItem('myid')
+    const notas=await getAllNotes('notas',idUser)
+    console.log(notas);
+  } 
+  functionFetch(); 
   return (
     <div className="container-option">
       <main className="menu">
