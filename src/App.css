@@ -107,7 +107,7 @@ Link {
 }
 .conteiner-start::after {
   content: "";
-  background-color: rgb(236, 238, 246);
+  background: rgb(236, 238, 246);
   opacity: 0.6;
   top: 0;
   left: 0;
@@ -143,6 +143,10 @@ Link {
   height: 500px;
   margin-top: 60px;
 }
+.text-login {
+  color: white;
+  text-align: center;
+}
 .paragraph1 {
   color: rgb(255, 193, 7);
 }
@@ -172,7 +176,7 @@ Link {
   color: purple;
   border: solid rgb(251, 254, 216);
   border-radius: 10px;
-  width: 100px;
+  width: 300px;
 }
 .login {
   width: 100%;

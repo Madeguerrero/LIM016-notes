@@ -1,8 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { ingresarCorreoContrasenha } from "../firebaseConfi";
+import { Link } from "react-router-dom";
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //import faFacebook from "@fortawesome/free-solid-svg-icons";
+
 function Login() {
   const navigate = useNavigate(); //para navegar
   const loginUser = (e) => {
@@ -26,7 +28,7 @@ function Login() {
         console.log(error);
       });
 
-    alert("hola");
+    //alert("hola");
   };
   const logoLogin = new URL("../assets/img/logo.png", import.meta.url);
   return (
@@ -34,31 +36,30 @@ function Login() {
       <div className="conteiner-login">
         <div className="logo">
           <img id="logo-login" src={logoLogin} alt="imagenLogo"></img>
+          <h3 className="text-login">Let's get to write</h3>
         </div>
-        <h3>Let's get to write</h3>
         <form className="login">
           <input type="email" placeholder="Email" id="correo"></input>
           <br></br>
           <input type="password" placeholder="Password" id="contraseña"></input>
           <p className="paragraph1">Forgot Password?</p>
           <button onClick={loginUser} className="login-button">
-            login
+            <Link to="/home"> Login</Link>
           </button>
           <p className="paragraph2">or create account using social media</p>
           <button className="facebook-button">Log in with Facebook</button>
           <button className="google-button">Log in with Google</button>
+          <p className="paragraph2">
+            Don't have account?
+            <a href="signup" className="navSignup">
+              Sign Up
+            </a>
+          </p>
         </form>
-        <p className="paragraph2">
-          Don't have account?
-          <a href="signup" className="navSignup">
-            Sign Up
-          </a>
-        </p>
       </div>
     </section>
   );
 }
-export default Login
-
+export default Login;
 
 //<Link to="/home">Login</Link>{" "}
