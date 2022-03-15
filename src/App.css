@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
 }
-
+/*2048 x 2732*/
 .App {
   text-align: center;
 }
@@ -94,7 +94,6 @@ Link {
 }
 .optionForm {
   display: flex;
-  justify-content: space-between;
 }
 /* ------ pagina inicial ------- */
 .conteiner-start {
@@ -147,37 +146,42 @@ Link {
 .text-login {
   color: white;
   text-align: center;
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
 }
 .paragraph1 {
   color: rgb(255, 193, 7);
+  margin-bottom: 10px;
+  float: right;
 }
 .paragraph2 {
   color: white;
+  margin-bottom: 10px;
 }
 .navSignup {
   color: rgb(255, 193, 7);
   text-decoration: none;
 }
-.facebook-button {
-  border-radius: 15px;
-  background-color: rgb(77, 68, 187);
-  border-color: rgb(77, 68, 187);
-  width: 300px;
-  color: white;
-}
 .google-button {
   border-radius: 15px;
   background-color: rgb(114, 56, 135);
   border-color: rgb(114, 56, 135);
-  width: 300px;
+  width: 250px;
   color: white;
+  margin-bottom: 10px;
+  padding: 5px;
 }
 .login-button {
   background: none;
-  color: purple;
+  color: white;
   border: solid rgb(251, 254, 216);
+  background: rgb(150, 72, 147);
+  opacity: 0.5;
   border-radius: 10px;
-  width: 300px;
+  width: 250px;
+  margin-bottom: 10px;
+  padding: 5px;
 }
 .login {
   width: 100%;
@@ -187,18 +191,26 @@ Link {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
+  margin-top: 30px;
 }
 #correo {
   border: solid rgb(251, 254, 216);
   border-radius: 10px;
   background: rgb(251, 254, 216);
   color: rgb(156, 156, 158);
+  margin-bottom: 10px;
+  width: 250px;
+  padding: 5px;
 }
 #contraseña {
   border: solid rgb(251, 254, 216);
   border-radius: 10px;
   background: rgb(251, 254, 216);
   color: rgb(156, 156, 158);
+  margin-bottom: 10px;
+  width: 250px;
+  padding: 5px;
 }
 
 /* ------- sign up ---------- */
@@ -239,7 +251,24 @@ Link {
 .notesCreate {
   border-style: solid;
   border-radius: 10px;
-  width: 400px;
+  width: 200px;
   background-color: rgb(251, 254, 216);
+}
+.formCreateNotes {
   margin-left: 50px;
+}
+.footerNote {
+  margin-left: 50px;
+}
+/* -------- notes -------- */
+.notesObtained {
+  border-style: solid;
+  border-radius: 10px;
+  width: 200px;
+  margin: 10px;
+  background-color: rgb(251, 254, 216);
+}
+.orderlyNotes {
+  display: flex;
+  flex-wrap: wrap;
 }

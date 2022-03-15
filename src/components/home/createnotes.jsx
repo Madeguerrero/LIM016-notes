@@ -26,7 +26,7 @@ const CreateNotes = () => {
       <Banner />
       <div className="optionForm">
         <Option />
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="formCreateNotes">
           <div>
             <textarea
               type="text"
@@ -37,11 +37,13 @@ const CreateNotes = () => {
               value={value}
               onChange={(e) => setValue(e.target.value)}
             />
+            <div className="footerNote">
              <Moment format='MMMM Do YYYY, h:mm:ss a'>{date}</Moment>
              <Optionbar/>
-            <button value="Submit" className="btn-submit" alt="submit-checkout">
-              guardar
-            </button>
+            <button value="Submit" className="btn-submit" alt="submit-checkout">save</button>
+            <button>Cancel</button>
+            </div>
+
           </div>
         </form>
       </div>

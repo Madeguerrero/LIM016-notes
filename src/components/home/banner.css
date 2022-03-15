@@ -1,0 +1,6 @@
+@media only screen and (max-width: 810px) {
+  .container-banner {
+    background-size: 10%;
+    height: 10vh;
+  }
+}

@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 
 const linkStyle = {
   textDecoration: "none",
-  margin: 30,
-  color: "purple",
+  margin: 20,
+  color: "white",
   border: " solid rgb(251, 254, 216)",
   borderRadius: "10px",
   weight: "20px",
 };
 const signStyle = {
   textDecoration: "none",
-  margin: 30,
+  margin: 20,
   color: "purple",
   border: "solid rgb(251, 254, 216)",
   background: "rgb(251, 254, 216)",

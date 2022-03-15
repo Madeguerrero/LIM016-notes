@@ -5,6 +5,13 @@ import { Link } from "react-router-dom";
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //import faFacebook from "@fortawesome/free-solid-svg-icons";
 
+const loginStyleButton ={
+  textDecoration: "none",
+  color: "white"
+  }
+
+
+
 function Login() {
   const navigate = useNavigate(); //para navegar
   const loginUser = (e) => {
@@ -44,10 +51,9 @@ function Login() {
           <input type="password" placeholder="Password" id="contraseña"></input>
           <p className="paragraph1">Forgot Password?</p>
           <button onClick={loginUser} className="login-button">
-            <Link to="/home"> Login</Link>
+            <Link to="/home" style={loginStyleButton}> Login</Link>
           </button>
           <p className="paragraph2">or create account using social media</p>
-          <button className="facebook-button">Log in with Facebook</button>
           <button className="google-button">Log in with Google</button>
           <p className="paragraph2">
             Don't have account?
