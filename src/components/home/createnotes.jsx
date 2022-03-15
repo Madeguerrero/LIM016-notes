@@ -3,6 +3,9 @@ import Banner from "./banner";
 import Option from "./option";
 import { useState } from "react";
 import { ingresoBaseDatos } from "../../firebaseConfi";
+import Moment from 'react-moment';
+import Optionbar from "./optionbar";
+
 
 const CreateNotes = () => {
   const [value, setValue] = useState("");
@@ -17,7 +20,7 @@ const CreateNotes = () => {
       console.log(doc.id);
     });
   };
-
+  const date = new Date();
   return (
     <section className="container-banner">
       <Banner />
@@ -34,6 +37,8 @@ const CreateNotes = () => {
               value={value}
               onChange={(e) => setValue(e.target.value)}
             />
+             <Moment format='MMMM Do YYYY, h:mm:ss a'>{date}</Moment>
+             <Optionbar/>
             <button value="Submit" className="btn-submit" alt="submit-checkout">
               guardar
             </button>
@@ -45,4 +50,4 @@ const CreateNotes = () => {
 };
 
 export default CreateNotes;
-//<MdDeleteForever className="icon-delete" size="1.3em" />
+

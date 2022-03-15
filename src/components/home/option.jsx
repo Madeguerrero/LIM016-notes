@@ -1,12 +1,12 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
-import { getAllNotes } from "../../firebaseConfi";
+import Signout from "./signout";
+import SignUp from "../../pages/signup";
 
 const linkStyle = {
   textDecoration: "none",
@@ -14,24 +14,24 @@ const linkStyle = {
 };
 
 const Option = (props) => {
-  const functionFetch= async()=>{
-    const idUser = localStorage.getItem('myid')
-    const notas=await getAllNotes('notas',idUser)
-    console.log(notas);
-  } 
-  functionFetch(); 
+  
+  
+  const welcomeName= ()=>{
+  const idName = document.getElementById("outlined-Name").value;
+  console.log(idName);
+  }
   return (
     <div className="container-option">
-      <main className="menu">
+      <main className="menu-option">
         <br></br>
         <div className="user">
+          <h3>
           <FontAwesomeIcon icon={faUser} />
-          <h3> Welcome Maria</h3>
+          Welcome{welcomeName}</h3>
         </div>
         <br></br>
         <div className="settings">
-          <FontAwesomeIcon icon={faGear} />
-          <h3>Settings</h3>
+        <Signout />
         </div>
         <br></br>
         <hr></hr>
@@ -39,7 +39,6 @@ const Option = (props) => {
         <div className="create">
           <FontAwesomeIcon
             icon={faPenToSquare}
-            className="hover:text-blue-500"
           />
           <Link to="/createnotes" style={linkStyle}>
             Create

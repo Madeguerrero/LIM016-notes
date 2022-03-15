@@ -67,9 +67,10 @@ img {
   flex-direction: column;
   max-width: 100%;
 }
-.menu {
+.menu-option {
   background-color: rgb(191, 180, 192);
   height: 100vh;
+  width: 220px;
   justify-content: space-between;
 }
 .create {
