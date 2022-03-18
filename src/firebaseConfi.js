@@ -9,8 +9,6 @@ import {
   addDoc,
   where,
   query,
-  onSnapshot,
-  doc,
 } from "firebase/firestore/lite";
 import {
   createUserWithEmailAndPassword,
@@ -79,13 +77,20 @@ export const getAllNotes = (nameColection, idUser) => {
     where("creator", "==", idUser)
   );
   const notes = getDocs(colRef).then((docs) => {
-    const arrayNotes = [];
+    let arrayNotes = [];
     docs.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
-      arrayNotes.push(doc.data());
+      arrayNotes.push({ ...doc.data(), id: doc.id });
     });
     return arrayNotes;
   });
   return notes;
 };
-export const exitUser = () => {};
+/*export const exitUser = (idUser) => {
+  const auth = getAuth();
+signOut(auth).then(() => {
+  // Sign-out successful.
+}).catch((error) => {
+  // An error happened.
+});
+};*/

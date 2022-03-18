@@ -248,21 +248,37 @@ Link {
   margin-top: 10px;
 }
 /* ------- createNotes ------ */
-.notesCreate {
-  border-style: solid;
-  border-radius: 10px;
-  width: 200px;
+.form.CreateNotes {
+  margin-left: 50px;
+  background-color: rgb(251, 254, 216);
+  border-radius: 15px;
+  padding: 1rem;
+  height: 50px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footerNote {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+textarea {
+  border: none;
+  resize: none;
   background-color: rgb(251, 254, 216);
 }
-.formCreateNotes {
-  margin-left: 50px;
+textarea:focus {
+  outline: none;
 }
 .footerNote {
   margin-left: 50px;
 }
 /* -------- notes -------- */
 .notesObtained {
-  border-style: solid;
+  border-style: none;
+  padding: 1rem;
   border-radius: 10px;
   width: 200px;
   margin: 10px;

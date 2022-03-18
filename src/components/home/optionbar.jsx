@@ -17,4 +17,4 @@ import {AiOutlineMore} from "react-icons/ai";
      )
  }
 
- export default Optionbar
+ export default Optionbar;

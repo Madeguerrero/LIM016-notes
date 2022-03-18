@@ -13,21 +13,16 @@ const linkStyle = {
   margin: 10,
 };
 
-const Option = (props) => {
+const Option = () => {
   
-  
-  const welcomeName= ()=>{
-  const idName = document.getElementById("outlined-Name").value;
-  console.log(idName);
-  }
   return (
     <div className="container-option">
-      <main className="menu-option">
+      <div className="menu-option">
         <br></br>
         <div className="user">
           <h3>
           <FontAwesomeIcon icon={faUser} />
-          Welcome{welcomeName}</h3>
+          Welcome</h3>
         </div>
         <br></br>
         <div className="settings">
@@ -58,7 +53,7 @@ const Option = (props) => {
             Delete
           </Link>
         </div>
-      </main>
+      </div>
     </div>
   );
 };

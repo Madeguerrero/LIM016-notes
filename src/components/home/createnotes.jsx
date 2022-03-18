@@ -7,8 +7,11 @@ import Moment from 'react-moment';
 import Optionbar from "./optionbar";
 
 
+
 const CreateNotes = () => {
+  
   const [value, setValue] = useState("");
+  console.log(value);
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(value);
@@ -18,7 +21,7 @@ const CreateNotes = () => {
       creator: localStorage.getItem("myid")
     }).then((doc) => {
       console.log(doc.id);
-    });
+    })
   };
   const date = new Date();
   return (
@@ -26,30 +29,30 @@ const CreateNotes = () => {
       <Banner />
       <div className="optionForm">
         <Option />
-        <form onSubmit={handleSubmit} className="formCreateNotes">
-          <div>
-            <textarea
-              type="text"
-              placeholder=" Insert Tittle..."
-              className="notesCreate"
-              rows="20"
-              cols="40"
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
-            />
-            <div className="footerNote">
-             <Moment format='MMMM Do YYYY, h:mm:ss a'>{date}</Moment>
-             <Optionbar/>
-            <button value="Submit" className="btn-submit" alt="submit-checkout">save</button>
-            <button>Cancel</button>
-            </div>
-
-          </div>
-        </form>
-      </div>
-    </section>
+      <form onSubmit={handleSubmit} className="form CreateNotes">
+              <textarea
+                    type="text"
+                    placeholder=" Type to add a note..."
+                    className="notesCreate"
+                    rows="8"
+                    cols="10"
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+               />
+             <div className="footerNote">
+                   <small>200 Remaining</small>
+                  <Moment format='MMMM Do YYYY, h:mm:ss a'>{date}</Moment>
+                  <button  type="submit"  className="btn-submit">save</button>
+                  <button>Cancel</button>
+                  {/* <Optionbar/> */}
+             </div>
+         </form>
+         </div>
+     </section>
   );
 };
 
 export default CreateNotes;
+
+
 
