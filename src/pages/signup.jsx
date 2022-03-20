@@ -3,8 +3,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import { crearUsuario } from "../firebaseConfi";
+import logo from "../assets/img/logo.png"
 
-const signLogo = new URL("../assets/img/logo.png", import.meta.url);
+
 
 /* ---------------- estilos para el textField -------------------- */
 const styleButton = {
@@ -59,7 +60,7 @@ const SignUp = () => {
     <section className="conteiner">
       <div className="conteiner-signup">
         <form className="register">
-          <img src={signLogo} alt="signlog" className="signlogo"></img>
+          <img src={logo} alt="signlog" className="signlogo"></img>
           <TextField
             required
             style={styleTextField}

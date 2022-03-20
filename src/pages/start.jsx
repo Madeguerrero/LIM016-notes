@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/img/logo.png"
 
 const linkStyle = {
   textDecoration: "none",
@@ -19,16 +20,15 @@ const signStyle = {
   weight: "20px",
 };
 
-const logoNotes = new URL("../assets/img/logo.png", import.meta.url);
 
 const Start = () => (
   <section className="conteiner">
     <div className="conteiner-start">
       <div className="logo">
-        <img id="logo-inicio" src={logoNotes} alt="imagenLogo"></img>
+        <img id="logo-inicio" src={logo} alt="imagenLogo"></img> 
       </div>
       <nav className="user-identify">
-        <Link to="/login" style={linkStyle}>
+        <Link to="/login" className="btn pt-1 pt-sm-2 pt-md-3 pt-lg-5" style={linkStyle}>
           Login
         </Link>
         <Link to="/signup" style={signStyle}>
@@ -38,5 +38,6 @@ const Start = () => (
     </div>
   </section>
 );
+
 
 export default Start;

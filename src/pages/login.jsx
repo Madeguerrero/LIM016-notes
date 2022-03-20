@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { ingresarCorreoContrasenha } from "../firebaseConfi";
 import { Link } from "react-router-dom";
+import logo from "../assets/img/logo.png"
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //import faFacebook from "@fortawesome/free-solid-svg-icons";
 
@@ -37,12 +38,12 @@ function Login() {
 
     //alert("hola");
   };
-  const logoLogin = new URL("../assets/img/logo.png", import.meta.url);
+  
   return (
     <section className="conteiner">
       <div className="conteiner-login">
         <div className="logo">
-          <img id="logo-login" src={logoLogin} alt="imagenLogo"></img>
+          <img id="logo-login" src={logo} alt="imagenLogo"></img>
           <h3 className="text-login">Let's get to write</h3>
         </div>
         <form className="login">

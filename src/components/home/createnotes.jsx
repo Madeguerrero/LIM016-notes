@@ -44,7 +44,7 @@ const CreateNotes = () => {
                   <Moment format='MMMM Do YYYY, h:mm:ss a'>{date}</Moment>
                   <button  type="submit"  className="btn-submit">save</button>
                   <button>Cancel</button>
-                  {/* <Optionbar/> */}
+                  <Optionbar/> 
              </div>
          </form>
          </div>

@@ -9,6 +9,7 @@ import Home from "./components/home/home";
 import CreateNotes from "./components/home/createnotes";
 import Notes from "./components/home/notes";
 import Delete from "./components/home/delete";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 const rootElement = document.getElementById("root");
 render(

@@ -7,12 +7,14 @@ import {AiOutlineMore} from "react-icons/ai";
      return (
          <div className="bar-option">
              <AiOutlineMore onClick={showSiderBar}/>
-             <nav className={sidebar ? 'nav menu active' : 'nav menu'}>
-             <ul className="list-bar">
-                 <li className="namelist">
-                 </li>
-             </ul>
-             </nav>
+             <select class="form-select form-select-sm" aria-label=".form-select-sm example" >
+                <option selected>Select option</option>
+                <option value="1" type="submit">Save</option>
+                <option value="2">Add label</option>
+                <option value="3">Add picture</option>
+                <option value="4">Create copy</option>
+                <option value="6">Delete note</option>
+            </select>
          </div>
      )
  }

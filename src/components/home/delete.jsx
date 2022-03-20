@@ -1,3 +1,4 @@
+import React from "react";
 import Banner from "./banner";
 import Option from "./option";
 
