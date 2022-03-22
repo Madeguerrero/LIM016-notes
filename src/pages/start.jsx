@@ -7,8 +7,10 @@ const linkStyle = {
   margin: 20,
   color: "white",
   border: " solid rgb(251, 254, 216)",
+  background:"rgba(160, 101, 157, 0.575)",
   borderRadius: "10px",
-  weight: "20px",
+  height: "35px",
+  
 };
 const signStyle = {
   textDecoration: "none",
@@ -17,7 +19,7 @@ const signStyle = {
   border: "solid rgb(251, 254, 216)",
   background: "rgb(251, 254, 216)",
   borderRadius: "10px",
-  weight: "20px",
+  height: "35px",
 };
 
 
@@ -28,10 +30,10 @@ const Start = () => (
         <img id="logo-inicio" src={logo} alt="imagenLogo"></img> 
       </div>
       <nav className="user-identify">
-        <Link to="/login" className="btn pt-1 pt-sm-2 pt-md-3 pt-lg-5" style={linkStyle}>
+        <Link to="/login" className="btn pt-1 pt-sm-2 pt-md-3 pt-lg-1" style={linkStyle}>
           Login
         </Link>
-        <Link to="/signup" style={signStyle}>
+        <Link to="/signup" className="btn pt-1 pt-sm-2 pt-md-3 pt-lg-1" style={signStyle}>
           Sign Up
         </Link>
       </nav>

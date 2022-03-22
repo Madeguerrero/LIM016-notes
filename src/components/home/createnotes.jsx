@@ -3,7 +3,7 @@ import Banner from "./banner";
 import Option from "./option";
 import { useState } from "react";
 import { ingresoBaseDatos } from "../../firebaseConfi";
-import Moment from 'react-moment';
+//import Moment from 'react-moment';
 import Optionbar from "./optionbar";
 
 
@@ -15,15 +15,17 @@ const CreateNotes = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(value);
+    const date = new Date();
     ingresoBaseDatos("notas", {
       title: "title_notas",
       description: value,
+      date: date.toLocaleDateString(),
       creator: localStorage.getItem("myid")
     }).then((doc) => {
       console.log(doc.id);
     })
   };
-  const date = new Date();
+ 
   return (
     <section className="container-banner">
       <Banner />
@@ -41,9 +43,7 @@ const CreateNotes = () => {
                />
              <div className="footerNote">
                    <small>200 Remaining</small>
-                  <Moment format='MMMM Do YYYY, h:mm:ss a'>{date}</Moment>
-                  <button  type="submit"  className="btn-submit">save</button>
-                  <button>Cancel</button>
+                  <button  type="submit"  className="btn-submit">save</button> 
                   <Optionbar/> 
              </div>
          </form>
@@ -54,5 +54,6 @@ const CreateNotes = () => {
 
 export default CreateNotes;
 
-
+{/* <Moment format='MMMM Do YYYY, h:mm:ss a'>{date}</Moment> */}
+ //const date = new Date();
 

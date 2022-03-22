@@ -4,9 +4,11 @@ import Option from "./option";
 import { getAllNotes } from "../../firebaseConfi";
 import { useEffect } from "react";
 import { useState } from "react";
+import Optionbar from "./optionbar";
+import {updateStateNote } from '../../firebaseConfi';
 
 
-const Notes = () => {
+const Notes = (props) => {
 const [notas,setNotas] = useState([]);
   const functionFetch= async()=>{
     const idUser = localStorage.getItem('myid')
@@ -19,14 +21,23 @@ const [notas,setNotas] = useState([]);
 useEffect(() =>{
   functionFetch();
 },[])
-  
+    
+const LastNotesRemove =(idNote)=>{
+      updateStateNote(idNote).then(() => {
+          const newArrayNotes = [...props.arrayNotes].filter((objNote)=>objNote.id!==idNote);
+          props.setArrayNotes(newArrayNotes);
+      }).catch(() => { 
+          alert('Error al intentar eliminar la nota '+ idNote)
+      });
+       
+ }
 return (
     <section className="container-banner">
       <Banner />
       <div className="optionForm">
       <Option />
         <div className="orderlyNotes" >
-           {notas.map(nota => <section key={nota.id} rows="10" cols="10" className="notesObtained">{`${nota.description}`}</section>)}
+           {notas.map(nota => <section key={nota.id} rows="10" cols="10" className="notesObtained">{`${nota.description}`} {`${nota.date}`}<Optionbar className="noteOption2"/></section>)}
         </div>
       </div>
     </section>

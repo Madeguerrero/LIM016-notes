@@ -8,7 +8,8 @@ import logo from "../assets/img/logo.png"
 
 const loginStyleButton ={
   textDecoration: "none",
-  color: "white"
+  color: "white",
+  
   }
 
 
@@ -43,14 +44,14 @@ function Login() {
     <section className="conteiner">
       <div className="conteiner-login">
         <div className="logo">
-          <img id="logo-login" src={logo} alt="imagenLogo"></img>
+          <img id="logo-login" src={logo} alt="imagenLogo" text></img>
           <h3 className="text-login">Let's get to write</h3>
         </div>
         <form className="login">
           <input type="email" placeholder="Email" id="correo"></input>
           <br></br>
           <input type="password" placeholder="Password" id="contraseña"></input>
-          <p className="paragraph1">Forgot Password?</p>
+          <a href="#" className="paragraph1">Forgot Password?</a>
           <button onClick={loginUser} className="login-button">
             <Link to="/home" style={loginStyleButton}> Login</Link>
           </button>

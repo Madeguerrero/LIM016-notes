@@ -44,13 +44,15 @@ img {
   width: 300px;
   border-radius: 10px;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 80px;
   margin-right: 35px;
 }
 .icon {
   color: rgb(156, 156, 158);
   top: 140%;
   transform: translateY(-140%);
+  padding-left: 10px;
+  padding-bottom: 2px;
 }
 .banner {
   height: 100%;
@@ -105,24 +107,13 @@ Link {
   height: 500px;
   margin-top: 60px;
 }
-.conteiner-start::after {
-  content: "";
-  background: rgb(236, 238, 246);
-  opacity: 0.6;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
 
 .logo {
   max-width: 500px;
 }
 #logo-inicio {
-  width: 320px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
 }
 .user-identify {
   margin-top: 10px;
@@ -132,10 +123,11 @@ Link {
 /* ------- Login -------- */
 
 #logo-login {
-  width: 200px;
+  width: 180px;
   display: block;
   margin: 0px auto;
 }
+
 .conteiner-login {
   border-style: solid;
   border-color: rgb(251, 254, 216);
@@ -147,42 +139,46 @@ Link {
 .text-login {
   color: white;
   text-align: center;
-  margin-bottom: 10px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100%;
 }
 .paragraph1 {
   color: rgb(255, 193, 7);
   margin-bottom: 10px;
-  float: right;
+  text-decoration: none;
+  font-size: 80%;
+  margin-left: 150px;
 }
 .paragraph2 {
   color: white;
   margin-bottom: 10px;
+  font-size: 80%;
 }
 .navSignup {
   color: rgb(255, 193, 7);
   text-decoration: none;
+  font-size: 100%;
+  margin-left: 5px;
 }
 .google-button {
   border-radius: 15px;
   background-color: rgb(114, 56, 135);
   border-color: rgb(114, 56, 135);
   width: 250px;
+  height: 30px;
   color: white;
-  margin-bottom: 10px;
-  padding: 5px;
+  margin-bottom: 15px;
+  margin-top: 10px;
 }
 .login-button {
   background: none;
   color: white;
   border: solid rgb(251, 254, 216);
-  background: rgb(150, 72, 147);
-  opacity: 0.5;
+  background-color: rgba(160, 101, 157, 0.575);
   border-radius: 10px;
   width: 250px;
+  height: 30px;
   margin-bottom: 10px;
-  padding: 5px;
 }
 .login {
   width: 100%;
@@ -200,8 +196,9 @@ Link {
   border-radius: 10px;
   background: rgb(251, 254, 216);
   color: rgb(156, 156, 158);
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   width: 250px;
+  height: 30px;
   padding: 5px;
 }
 #contraseña {
@@ -211,6 +208,7 @@ Link {
   color: rgb(156, 156, 158);
   margin-bottom: 10px;
   width: 250px;
+  height: 30px;
   padding: 5px;
 }
 
@@ -234,7 +232,6 @@ Link {
   height: 160px;
   display: block;
   margin: 0px auto;
-  padding-top: 10px;
 }
 .button-sign {
   border-radius: 15px;
@@ -243,6 +240,7 @@ Link {
   width: 250px;
   height: 40px;
   color: white;
+  margin-top: 20px;
 }
 .p-count {
   color: white;
@@ -251,6 +249,7 @@ Link {
 /* ------- createNotes ------ */
 .form.CreateNotes {
   margin-left: 50px;
+  margin-top: 50px;
   background-color: rgb(251, 254, 216);
   border-radius: 15px;
   padding: 1rem;
@@ -265,12 +264,12 @@ Link {
   align-items: center;
   justify-content: space-between;
 }
-textarea {
+.notesCreate {
   border: none;
   resize: none;
   background-color: rgb(251, 254, 216);
 }
-textarea:focus {
+.notesCreate:focus {
   outline: none;
 }
 .footerNote {
@@ -282,10 +281,55 @@ textarea:focus {
   padding: 1rem;
   border-radius: 10px;
   width: 200px;
+  height: 250px;
   margin: 10px;
   background-color: rgb(251, 254, 216);
 }
 .orderlyNotes {
   display: flex;
   flex-wrap: wrap;
+}
+/* ------------ OptionBar ------------ */
+.iconDot {
+  color: black;
+}
+/* ----------- notes --------- */
+.noteOption2 {
+  float: right;
+}
+.dropdown-save {
+  text-decoration: none;
+  padding: 1rem;
+  color: black;
+}
+
+.dropdown-addLabel {
+  text-decoration: none;
+  padding: 1rem;
+  color: black;
+}
+.dropdown-addPicture {
+  text-decoration: none;
+  padding: 1rem;
+  color: black;
+}
+.dropdown-createCopy {
+  text-decoration: none;
+  padding: 1rem;
+  color: black;
+}
+.dropdown-deleteNote {
+  text-decoration: none;
+  padding: 1rem;
+  color: black;
+}
+.dropdown-cleanNote {
+  text-decoration: none;
+  padding: 1rem;
+  color: black;
+}
+.dropdown-menu-end {
+  background: linear-gradient(to bottom, #b7b492 0%, #efecc8 100%);
+  color: #000;
+  cursor: pointer;
 }

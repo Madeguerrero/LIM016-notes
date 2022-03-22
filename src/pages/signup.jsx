@@ -18,6 +18,7 @@ const styleTextField = {
   width: "250px",
   margin: "0.5rem",
   padding: "none",
+
 };
 
 const SignUp = () => {

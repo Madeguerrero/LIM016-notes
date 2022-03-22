@@ -20,9 +20,9 @@ const Option = () => {
       <div className="menu-option">
         <br></br>
         <div className="user">
-          <h3>
+          <h4>
           <FontAwesomeIcon icon={faUser} />
-          Welcome</h3>
+          Welcome</h4>
         </div>
         <br></br>
         <div className="settings">
@@ -32,18 +32,16 @@ const Option = () => {
         <hr></hr>
         <br></br>
         <div className="create">
-          <FontAwesomeIcon
-            icon={faPenToSquare}
-          />
+          <FontAwesomeIcon icon={faPenToSquare}/>
           <Link to="/createnotes" style={linkStyle}>
             Create
           </Link>
         </div>
         <br></br>
         <div className="notes">
-          <FontAwesomeIcon icon={faFileLines} />
+          <FontAwesomeIcon icon={faFileLines}/>
           <Link to="/notes" style={linkStyle}>
-            Notes
+             Notes
           </Link>
         </div>
         <br></br>
