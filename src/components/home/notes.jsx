@@ -22,25 +22,29 @@ useEffect(() =>{
   functionFetch();
 },[])
     
-const LastNotesRemove =(idNote)=>{
-      updateStateNote(idNote).then(() => {
-          const newArrayNotes = [...props.arrayNotes].filter((objNote)=>objNote.id!==idNote);
-          props.setArrayNotes(newArrayNotes);
-      }).catch(() => { 
-          alert('Error al intentar eliminar la nota '+ idNote)
-      });
-       
- }
+const NotesRemove =(notes)=>{
+  console.log("que",notes);
+  updateStateNote(notes).then(() => {
+    const newArrayNotes =[...notas].filter((objectNote)=>objectNote.id !== notes);
+    setNotas(newArrayNotes);
+  }).catch((error) =>{
+    console.log(error);
+  })
+}
+
 return (
     <section className="container-banner">
       <Banner />
       <div className="optionForm">
       <Option />
         <div className="orderlyNotes" >
-           {notas.map(nota => <section key={nota.id} rows="10" cols="10" className="notesObtained">{`${nota.description}`} {`${nota.date}`}<Optionbar className="noteOption2"/></section>)}
+           {notas.map(nota => <section key={nota.id} rows="10" cols="10" className="notesObtained">{`${nota.description}`} {`${nota.date}`}
+           <button onClick={() => NotesRemove(nota.id)}>delete</button>
+           <Optionbar className="noteOption2"/>
+           </section>)}
         </div>
       </div>
-    </section>
+ </section>
   );
 };
 

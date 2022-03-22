@@ -96,6 +96,7 @@ Link {
 }
 .optionForm {
   display: flex;
+  background-color: rgb(228, 225, 225);
 }
 /* ------ pagina inicial ------- */
 .conteiner-start {

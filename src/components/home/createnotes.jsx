@@ -18,6 +18,7 @@ const CreateNotes = () => {
     const date = new Date();
     ingresoBaseDatos("notas", {
       title: "title_notas",
+      status:"active",
       description: value,
       date: date.toLocaleDateString(),
       creator: localStorage.getItem("myid")
