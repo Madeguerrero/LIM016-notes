@@ -13,8 +13,9 @@ const [notas,setNotas] = useState([]);
   const functionFetch= async()=>{
     const idUser = localStorage.getItem('myid')
     console.log(idUser);
-     const notes = await getAllNotes('notas',idUser)
-     console.log(notes);
+     let notes = await getAllNotes('notas',idUser)
+      notes = notes.filter((note)=> note.status)
+     console.log("quetal",notes);
      setNotas(notes);
 } 
 
@@ -22,10 +23,11 @@ useEffect(() =>{
   functionFetch();
 },[])
     
-const NotesRemove =(notes)=>{
-  console.log("que",notes);
-  updateStateNote(notes).then(() => {
-    const newArrayNotes =[...notas].filter((objectNote)=>objectNote.id !== notes);
+const NotesRemove =(idNote)=>{
+  console.log("que",idNote);
+  updateStateNote(idNote).then(() => {
+    const newArrayNotes =[...notas].filter((objectNote)=>objectNote.id !== idNote);
+    console.log(newArrayNotes);
     setNotas(newArrayNotes);
   }).catch((error) =>{
     console.log(error);
@@ -38,10 +40,17 @@ return (
       <div className="optionForm">
       <Option />
         <div className="orderlyNotes" >
-           {notas.map(nota => <section key={nota.id} rows="10" cols="10" className="notesObtained">{`${nota.description}`} {`${nota.date}`}
-           <button onClick={() => NotesRemove(nota.id)}>delete</button>
-           <Optionbar className="noteOption2"/>
-           </section>)}
+           {notas.map(nota => <section>
+             <section
+            key={nota.id} rows="20" cols="20" className="notesObtained">
+                {`${nota.description}`}</section>
+           <div className="FooterNotes2">
+               {`${nota.date}`}
+               <button onClick={() => NotesRemove(nota.id)}>delete</button>
+               <button> edit note</button>
+                <Optionbar className="noteOption2"/>
+          </div>
+          </section>)}
         </div>
       </div>
  </section>

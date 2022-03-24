@@ -252,13 +252,18 @@ Link {
   margin-left: 50px;
   margin-top: 50px;
   background-color: rgb(251, 254, 216);
+  border-style: double;
   border-radius: 15px;
   padding: 1rem;
   height: 50px;
-  min-height: 250px;
+  min-height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.titleNote {
+  background-color: rgb(251, 254, 216);
+  border-radius: 5px;
 }
 .footerNote {
   display: flex;
@@ -285,6 +290,7 @@ Link {
   height: 250px;
   margin: 10px;
   background-color: rgb(251, 254, 216);
+  border-style: double;
 }
 .orderlyNotes {
   display: flex;
@@ -334,3 +340,21 @@ Link {
   color: #000;
   cursor: pointer;
 }
+.FooterNotes2 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: absolute;
+}
+/* -------- Delete --------- */
+/* .revomeNotes {
+  border-style: none;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 200px;
+  height: 250px;
+  margin: 10px;
+  background-color: rgb(251, 254, 216);
+  border-style: double;
+}
+ */

@@ -17,8 +17,8 @@ const CreateNotes = () => {
     console.log(value);
     const date = new Date();
     ingresoBaseDatos("notas", {
-      title: "title_notas",
-      status:"active",
+      title: event.target.title.value,
+      status: true,
       description: value,
       date: date.toLocaleDateString(),
       creator: localStorage.getItem("myid")
@@ -33,6 +33,7 @@ const CreateNotes = () => {
       <div className="optionForm">
         <Option />
       <form onSubmit={handleSubmit} className="form CreateNotes">
+        <input className="titleNote"  id="title" type="text" placeholder="Enter title"></input>
               <textarea
                     type="text"
                     placeholder=" Type to add a note..."

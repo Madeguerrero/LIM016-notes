@@ -91,7 +91,7 @@ export const getAllNotes = (nameColection, idUser) => {
 };
 export const deleteNote = (id) => deleteDoc(doc(db, "notas", id));
 export const updateStateNote = (idNote) =>
-  updateDoc(doc(db, "notas", idNote), { state: false });
+  updateDoc(doc(db, "notas", idNote), { status: false });
 /*export const exitUser = (idUser) => {
   const auth = getAuth();
 signOut(auth).then(() => {
