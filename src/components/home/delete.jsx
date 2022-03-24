@@ -38,17 +38,19 @@ return (
       <Banner />
       <div className="optionForm">
       <Option />
-      <div className="revomeNotes">
-      {notas.map(nota => <section>
-             <textarea
-            key={nota.id} rows="20" cols="20" className="notesObtained">{`${nota.description}`}</textarea>
+      <form className="revomeNotes">
+      {notas.map(nota => <section className="sectNoteDelete">
+             <div key={nota.id} rows="20" cols="20" className="notesObtained">
+               <p>{nota.title}</p>
+                {`${nota.description}`}
+            </div>
         <div className="FooterDelete">
+        <p className="dateNote">{`${nota.date}`}</p>
         <IoIosTrash  className="noteDeleteForever" size='1.4em' onClick={() => NoteRemoveForever(nota.id)} />
-
         <IoMdSync  className="restoreNote" size='1.4em'/>
         </div>
         </section>)}
-      </div>
+      </form>
       </div>
     </section>
   );

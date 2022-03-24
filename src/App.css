@@ -264,6 +264,7 @@ Link {
 .titleNote {
   background-color: rgb(251, 254, 216);
   border-radius: 5px;
+  border-style: dashed;
 }
 .footerNote {
   display: flex;
@@ -278,31 +279,47 @@ Link {
 .notesCreate:focus {
   outline: none;
 }
-.footerNote {
-  margin-left: 50px;
-}
+
 /* -------- notes -------- */
-.notesObtained {
+/* .notesObtained {
   border-style: none;
   padding: 1rem;
   border-radius: 10px;
   width: 200px;
-  height: 250px;
+  height: 350px;
   margin: 10px;
   background-color: rgb(251, 254, 216);
   border-style: double;
+} */
+.sectNotes {
+  border-style: none;
+  padding: 1rem;
+  border-radius: 15px;
+  width: 200px;
+  min-height: 350px;
+  margin: 10px;
+  background-color: rgb(251, 254, 216);
+  border-style: double;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .orderlyNotes {
   display: flex;
   flex-wrap: wrap;
+  height: 350px;
 }
-/* ------------ OptionBar ------------ */
-.iconDot {
-  color: black;
+.FooterNotes2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-/* ----------- notes --------- */
+
 .noteOption2 {
   float: right;
+}
+.dateNote {
+  font-size: small;
 }
 .dropdown-save {
   text-decoration: none;
@@ -340,21 +357,32 @@ Link {
   color: #000;
   cursor: pointer;
 }
-.FooterNotes2 {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  position: absolute;
+/* ------------ OptionBar ------------ */
+.iconDot {
+  color: black;
 }
 /* -------- Delete --------- */
-/* .revomeNotes {
+.sectNoteDelete {
   border-style: none;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 15px;
   width: 200px;
-  height: 250px;
-  margin: 10px;
+  min-height: 350px;
+  margin: 15px;
   background-color: rgb(251, 254, 216);
   border-style: double;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
- */
+.noteDeleteForever {
+  cursor: pointer;
+}
+.restoreNote {
+  cursor: pointer;
+}
+.FooterDelete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
