@@ -70,7 +70,7 @@ img {
   max-width: 100%;
 }
 .menu-option {
-  background-color: rgb(191, 180, 192);
+  background-color: rgb(218, 221, 252);
   height: 100vh;
   width: 220px;
   justify-content: space-between;
@@ -279,6 +279,9 @@ Link {
 .notesCreate:focus {
   outline: none;
 }
+.addLabels {
+  color: #0575e6;
+}
 
 /* -------- notes -------- */
 /* .notesObtained {
@@ -385,4 +388,8 @@ Link {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+/* ---------- addlabel --------*/
+.labelPersonal {
+  border-color: blueviolet;
 }

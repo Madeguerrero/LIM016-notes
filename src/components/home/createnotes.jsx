@@ -3,8 +3,8 @@ import Banner from "./banner";
 import Option from "./option";
 import { useState } from "react";
 import { ingresoBaseDatos } from "../../firebaseConfi";
-//import Moment from 'react-moment';
 import Optionbar from "./optionbar";
+import AddLabel from "./addlabel";
 
 
 
@@ -34,6 +34,7 @@ const CreateNotes = () => {
         <Option />
       <form onSubmit={handleSubmit} className="form CreateNotes">
         <input className="titleNote"  id="title" type="text" placeholder="Enter title"></input>
+        <AddLabel/>
               <textarea
                     type="text"
                     placeholder=" Type to add a note..."
@@ -56,6 +57,4 @@ const CreateNotes = () => {
 
 export default CreateNotes;
 
-{/* <Moment format='MMMM Do YYYY, h:mm:ss a'>{date}</Moment> */}
- //const date = new Date();
 

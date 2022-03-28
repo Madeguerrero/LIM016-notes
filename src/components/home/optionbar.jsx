@@ -19,11 +19,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
             <AiOutlineMore className="iconDot"/></button>
             <ul className="dropdown-menu dropdown-menu-end">
                <li><a className="dropdown-save" type="submit" >Save</a></li>
-               <li><a className="dropdown-addLabel" >Add label</a></li>
                <li><a className="dropdown-addPicture" >Add picture</a></li>
-               <li><a className="dropdown-createCopy" >Create copy</a></li>
-               <li><a className="dropdown-deleteNote" >Delete note</a></li>
-               <li><a className="dropdown-cleanNote" >Clean note</a></li>
+               <li><a className="dropdown-createCopy" >Create copy Google Docs</a></li>
           </ul> 
           </div>
         </div>

@@ -6,6 +6,10 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Optionbar from "./optionbar";
 import {updateStateNote } from '../../firebaseConfi';
+import { addDoc, collection } from "firebase/firestore/lite";
+import {updateNewNote} from "../../firebaseConfi";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 
 const Notes = (props) => {
@@ -34,14 +38,25 @@ const NotesRemove =(idNote)=>{
     console.log(error);
   })
 }
-const [modal,setModal] =useState(false);
-const handleChange=(event)=>{
-  setModal(!modal)
-}
-const handleSubmit=(note)=>{
-  updateStateNote(note)
+const state={
+  title:"",
+  description:"",
 }
 
+const [listTitle,setListName] = useState(state);
+const handleChange=(e)=>{
+  const{title,value} = e.target;
+  setListName({...listTitle,[title]: value})
+}
+
+  const handleSubmit=(e)=>{
+  /*e.preventDefault();
+  updateNewNote(listTitle);
+} 
+useEffect(() =>{
+  setListName(notas);
+}, [notas]);
+*/}
 return (
     <section className="container-banner">
       <Banner />
@@ -57,7 +72,7 @@ return (
            <div className="FooterNotes2">
               <p className="dateNote">{`${nota.date}`}</p>
                <button onClick={() => NotesRemove(nota.id)}>delete</button>
-               <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Edit</button>
+               <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Edit</button>
                <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
              <div className="modal-dialog">
               <div className="modal-content">
@@ -67,12 +82,12 @@ return (
                 <div className="modal-body">
                 <form>
                     <div className="mb-3">
-                       <label for="recipient-name" className="col-form-label" >Title:</label>
-                       <input type="text" className="form-control" id="recipient-name" value={nota.title}  onChange ={handleChange}/>
+                       <label >Title:</label>
+                       <input type="text" className="form-control" value ={nota.title}  onChange ={handleChange} />
                    </div>
                    <div className="mb-3">
                        <label for="message-text" className="col-form-label">Description:</label>
-                       <textarea className="form-control" id="message-text" value={`${nota.description}`} onChange={handleChange}></textarea>
+                       <textarea className="form-control"  value={`${nota.description}`} onChange={handleChange}></textarea>
                   </div>
                </form>
             </div>
