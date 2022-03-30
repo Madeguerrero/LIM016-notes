@@ -8,6 +8,7 @@ import AddLabel from "./addlabel";
 
 
 
+
 const CreateNotes = () => {
   
   const [value, setValue] = useState("");
@@ -18,6 +19,7 @@ const CreateNotes = () => {
     const date = new Date();
     ingresoBaseDatos("notas", {
       title: event.target.title.value,
+      label: value,
       status: true,
       description: value,
       date: date.toLocaleDateString(),

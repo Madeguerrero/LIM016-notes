@@ -95,6 +95,7 @@ export const updateStateNote = (idNote) =>
 
 export const updateNewNote = (idNote, newEditNotes) =>
   updateDoc(doc(getFirestore(), "notas", idNote), newEditNotes);
+
 /*export const exitUser = (idUser) => {
   const auth = getAuth();
 signOut(auth).then(() => {

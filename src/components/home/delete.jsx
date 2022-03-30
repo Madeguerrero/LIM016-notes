@@ -7,12 +7,14 @@ import {IoIosTrash} from "react-icons/io";
 import { getAllNotes } from "../../firebaseConfi";
 import { useEffect } from "react";
 import {deleteNote} from "../../firebaseConfi";
+import {updateNewNote} from "../../firebaseConfi";
 
 const Delete = (props) => {
   const [notas,setNotas] = useState([]);
-  const functionFetch= async()=>{
-    const idUser = localStorage.getItem('myid')
-    console.log(idUser);
+  
+    const functionFetch= async()=>{
+     const idUser = localStorage.getItem('myid')
+     console.log(idUser);
      let notes = await getAllNotes('notas',idUser)
       notes = notes.filter((note)=> !note.status)
      console.log("quetal",notes);
@@ -29,7 +31,13 @@ const NoteRemoveForever=(idNote)=>{
     console.log("funciona",arrayNoteDelete);
     setNotas(arrayNoteDelete);
   })
+}
 
+const resetNota=(e)=>{
+console.log(e);
+updateNewNote(e,{status: true});
+const arrayNoteReset = [... notas].filter((objectNote)=> objectNote.id !== e);
+setNotas(arrayNoteReset);
 
 }
   
@@ -47,7 +55,7 @@ return (
         <div className="FooterDelete">
         <p className="dateNote">{`${nota.date}`}</p>
         <IoIosTrash  className="noteDeleteForever" size='1.4em' onClick={() => NoteRemoveForever(nota.id)} />
-        <IoMdSync  className="restoreNote" size='1.4em'/>
+        <IoMdSync  className="restoreNote" size='1.4em' onClick={() => resetNota(nota.id)}/>
         </div>
         </section>)}
       </form>

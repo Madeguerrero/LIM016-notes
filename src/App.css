@@ -70,7 +70,8 @@ img {
   max-width: 100%;
 }
 .menu-option {
-  background-color: rgb(218, 221, 252);
+  background-color: #7f53ac;
+  background-image: linear-gradient(315deg, #7f53ac 0%, #6c85f5 74%);
   height: 100vh;
   width: 220px;
   justify-content: space-between;
