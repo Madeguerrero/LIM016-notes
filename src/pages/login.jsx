@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { ingresarCorreoContrasenha } from "../firebaseConfi";
 import { Link } from "react-router-dom";
 import logo from "../assets/img/logo.png"
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//import faFacebook from "@fortawesome/free-solid-svg-icons";
 
 const loginStyleButton ={
   textDecoration: "none",
@@ -36,8 +34,6 @@ function Login() {
         const errorMessage = error.message;
         console.log(error);
       });
-
-    //alert("hola");
   };
   
   return (
@@ -70,4 +66,3 @@ function Login() {
 }
 export default Login;
 
-//<Link to="/home">Login</Link>{" "}

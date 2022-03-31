@@ -54,7 +54,6 @@ const SignUp = () => {
     }
     console.log(inputsName);
 
-    //signInWithEmailAndPassword(user.email, user.password); no va
   };
 
   return (
@@ -111,10 +110,3 @@ const SignUp = () => {
 
 export default SignUp;
 
-//<RedditTextField
-//label="Password"
-//defaultValue="Password"
-//id="reddit-input"
-//variant="filled"
-//style={{ marginTop: 11 }}
-//>

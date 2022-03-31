@@ -1,11 +1,26 @@
 import React, { useEffect, useState } from "react"
 import Optionbar from "./optionbar";
+import { updateNewNote } from "../../firebaseConfi";
 
 
 
 const NotaAlmacenada =({note,deleteNote,setNotas})=>{ //destructurando las propiedades de props
     
     const {id,description,date,title} = note // destructurando las propiedades de note
+    const [texDescription,setTexDescription] = useState("");
+    /* const [err,setErr]= useState(false); */
+    
+   
+    const handleSubmit=(idNote)=>{
+        console.log(idNote,texDescription)
+        if(texDescription !== ""){
+            console.log("podemos actualizar")
+          updateNewNote(idNote,{description: texDescription}); 
+        }else{
+            console.log("no puedes actualizar")
+
+        }
+      } 
 
     return (
         <> 
@@ -29,17 +44,18 @@ const NotaAlmacenada =({note,deleteNote,setNotas})=>{ //destructurando las propi
                       <form>
                         <div className="mb-3">
                           <label >Title:</label>
-                          <input type="text" className="form-control" name="title" defaultValue= {title} /* onChange={handleChange} */ />
+                          <p className="form-control" name={title}>{title}</p>
                         </div>
                         <div className="mb-3">
                           <label  className="col-form-label">Description:</label>
-                          <textarea className="form-control"  defaultValue={description}/* onChange={handleChange} */></textarea>
+                          <textarea className="form-control"  defaultValue={description}  onChange={(e) => setTexDescription(e.target.value)} ></textarea>
                         </div>
+                       {/*  {(err)( <p>campo vacio o no hay modificaciones</p>)} */}
                       </form>
                     </div>
                     <div className="modal-footer">
                       <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
-                      <button type="button" className="btn btn-primary" /* onClick={() =>handleSubmit(nota.id)} */>Save change</button>
+                      <button type="button" className="btn btn-primary"  data-bs-dismiss="" onClick={() =>handleSubmit(id)} >Save change</button>
                     </div>
                   </div>
                 </div>

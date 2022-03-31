@@ -41,26 +41,6 @@ const Notes = () => {
     })
   }
 
-  const state = {
-    title: "",
-    description: "",
-  }
-
-  const [listTitle, setListName] = useState(state);
-
-  const handleChange = (e) => {
-    const { title, value } = e.target;
-    setListName({ ...listTitle, [title]: value })
-  }
-
-  /* const handleSubmit=(idNote)=>{
-    e.preventDefault();
-    updateNewNote(idNote,listTitle);
-  
-  useEffect(() =>{
-    setListName(notas);
-  }, [notas]);
-  } */
   return (
     <section className="container-banner">
       <Banner />

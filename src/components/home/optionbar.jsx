@@ -10,7 +10,6 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
      const [sidebar,setSidebar] = useState(false)
      const showSiderBar = () => setSidebar(!sidebar)
      
-     //const saveNote= props.handleSubmit("notas");
 
      return (
          <div className="bar-option">
@@ -29,15 +28,3 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
  export default Optionbar;
 
-
-
- {/* <select class="form-select form-select-sm" aria-label=".form-select-sm example"  >
- <option selected>Select option</option>
- <option value="1" type="submit">Save</option>
- <option value="2">Add label</option>
- <option value="3">Add picture</option>
- <option value="4">Create copy</option>
- <option value="6">Delete note</option>
-</select>
-<div class="dropdown">
-</div> */}
