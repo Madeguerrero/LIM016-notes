@@ -8,7 +8,8 @@ const NotaAlmacenada =({note,deleteNote,setNotas})=>{ //destructurando las propi
     
     const {id,description,date,title} = note // destructurando las propiedades de note
     const [texDescription,setTexDescription] = useState("");
-    /* const [err,setErr]= useState(false); */
+    const [err,setErr]= useState(false); 
+    const [ocultarModal,setOcultarModal]= useState(false);
     
    
     const handleSubmit=(idNote)=>{
@@ -16,8 +17,10 @@ const NotaAlmacenada =({note,deleteNote,setNotas})=>{ //destructurando las propi
         if(texDescription !== ""){
             console.log("podemos actualizar")
           updateNewNote(idNote,{description: texDescription}); 
+          setOcultarModal(true);
         }else{
             console.log("no puedes actualizar")
+            setErr(true);
 
         }
       } 
@@ -33,7 +36,7 @@ const NotaAlmacenada =({note,deleteNote,setNotas})=>{ //destructurando las propi
             <div className="FooterNotes2">
               <p className="dateNote">{`${date}`}</p>
               <button type="button" onClick={() => deleteNote(id)}>delete</button>
-              <button type="button" className="btn" data-bs-toggle="modal" data-bs-target={"#exampleModal"+id}  data-bs-whatever="@fat" >Edit</button>
+              <button type="button" className="btn" data-bs-toggle="modal" data-bs-target={"#exampleModal"+id}  data-bs-whatever="@fat" onClick={() =>  setOcultarModal === false} >Edit</button>
               <div className="modal fade" id={"exampleModal"+id}  tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                   <div className="modal-content">
@@ -48,14 +51,14 @@ const NotaAlmacenada =({note,deleteNote,setNotas})=>{ //destructurando las propi
                         </div>
                         <div className="mb-3">
                           <label  className="col-form-label">Description:</label>
-                          <textarea className="form-control"  defaultValue={description}  onChange={(e) => setTexDescription(e.target.value)} ></textarea>
+                          <textarea className="form-control"  defaultValue={description}  onChange={(e) => {setTexDescription(e.target.value); setErr(false)}} ></textarea>
                         </div>
-                       {/*  {(err)( <p>campo vacio o no hay modificaciones</p>)} */}
+                        {(err === true) && ( <p>campo vacio o no hay modificaciones</p>)} 
                       </form>
                     </div>
                     <div className="modal-footer">
                       <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
-                      <button type="button" className="btn btn-primary"  data-bs-dismiss="" onClick={() =>handleSubmit(id)} >Save change</button>
+                      <button type="button" className="btn btn-primary"  data-bs-dismiss={(ocultarModal === true) ? "modal" : ""} onClick={() =>handleSubmit(id)} >Save change</button>
                     </div>
                   </div>
                 </div>
