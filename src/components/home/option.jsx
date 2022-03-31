@@ -11,7 +11,7 @@ import SignUp from "../../pages/signup";
 const linkStyle = {
   textDecoration: "none",
   margin: 10,
-  color: "white",
+  color: "#310e68",
 };
 
 const Option = () => {

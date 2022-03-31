@@ -6,10 +6,11 @@ import { updateNewNote } from "../../firebaseConfi";
 
 const NotaAlmacenada =({note,deleteNote,setNotas})=>{ //destructurando las propiedades de props
     
-    const {id,description,date,title} = note // destructurando las propiedades de note
-    const [texDescription,setTexDescription] = useState("");
+    const {id,description,date,title,label} = note // destructurando las propiedades de note
+    const [texDescription,setTexDescription] = useState(description);
     const [err,setErr]= useState(false); 
     const [ocultarModal,setOcultarModal]= useState(false);
+    
     
    
     const handleSubmit=(idNote)=>{
@@ -27,16 +28,16 @@ const NotaAlmacenada =({note,deleteNote,setNotas})=>{ //destructurando las propi
 
     return (
         <> 
-        <section className="sectNotes">
-            <div key={id} rows="20" cols="20" className="notesObtained">
+        <section className="sectNotes" style={{background:label}}>
+            <div key={id} rows="20" cols="20" className="notesObtained" >
               <p>{title}</p>
               <hr></hr>
-              {`${description}`}
+              {`${texDescription}`}
             </div>
             <div className="FooterNotes2">
               <p className="dateNote">{`${date}`}</p>
               <button type="button" onClick={() => deleteNote(id)}>delete</button>
-              <button type="button" className="btn" data-bs-toggle="modal" data-bs-target={"#exampleModal"+id}  data-bs-whatever="@fat" onClick={() =>  setOcultarModal === false} >Edit</button>
+              <button type="button" className="btn" data-bs-toggle="modal" data-bs-target={"#exampleModal"+id}  data-bs-whatever="@fat" onClick={() =>  setOcultarModal(true)} >Edit</button>
               <div className="modal fade" id={"exampleModal"+id}  tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                   <div className="modal-content">

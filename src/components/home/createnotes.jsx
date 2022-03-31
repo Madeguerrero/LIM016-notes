@@ -12,6 +12,9 @@ import AddLabel from "./addlabel";
 const CreateNotes = () => {
   
   const [value, setValue] = useState("");
+  const [label,setLabel] = useState('rgb(251, 254, 216)'); //declaramos en label el color de la nota,con color inicial 
+
+
   console.log(value);
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,7 +22,7 @@ const CreateNotes = () => {
     const date = new Date();
     ingresoBaseDatos("notas", {
       title: event.target.title.value,
-      label: value,
+      label: label, 
       status: true,
       description: value,
       date: date.toLocaleDateString(),
@@ -28,15 +31,17 @@ const CreateNotes = () => {
       console.log(doc.id);
     })
   };
+
+  
  
   return (
     <section className="container-banner">
       <Banner />
       <div className="optionForm">
         <Option />
-      <form onSubmit={handleSubmit} className="form CreateNotes">
-        <input className="titleNote"  id="title" type="text" placeholder="Enter title"></input>
-        <AddLabel/>
+      <form onSubmit={handleSubmit} className="form CreateNotes" style={{background:label}}>
+        <input className="titleNote"  id="title" type="text" placeholder="Enter title" style={{background:label}}></input>
+        <AddLabel  setLabel={setLabel}/>
               <textarea
                     type="text"
                     placeholder=" Type to add a note..."
@@ -44,6 +49,7 @@ const CreateNotes = () => {
                     rows="8"
                     cols="10"
                     value={value}
+                    style={{background:label}}
                     onChange={(e) => setValue(e.target.value)}
                />
              <div className="footerNote">

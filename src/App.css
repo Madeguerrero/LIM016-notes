@@ -20,18 +20,7 @@ img {
 }
 /* ----- design banner ----- */
 .container-banner {
-  background: #0955a1; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #021b79,
-    #0575e6
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #021b79,
-    #0575e6
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background-size: 10%;
+  background-color: #310e68;
   height: 23vh;
 }
 .search-icon {
@@ -70,8 +59,7 @@ img {
   max-width: 100%;
 }
 .menu-option {
-  background-color: #4062bb;
-  background-image: linear-gradient(316deg, #4062bb 0%, #5200ae 74%);
+  background-color: rgb(167, 153, 183);
   height: 100vh;
   width: 220px;
   justify-content: space-between;

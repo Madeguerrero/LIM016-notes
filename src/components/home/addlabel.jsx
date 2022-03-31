@@ -6,34 +6,34 @@ const StyleButtonLabel={
     borderStyle:"none",
 }
 
-const AddLabel=()=>{
+const AddLabel=({setLabel})=>{
    
     let colors =[
     {
-        value:1,
+        value:0,
         label:"purple",
     },
     {
-        value:2,
-        label:"verde",
+        value:1,
+        label:"red",
     },
     {
-        value:3,
+        value:2,
         label:"orange"
     },
     {
-        value:4,
+        value:3,
         label:"blue"
     },
     {
-        value:5,
+        value:4,
         label:"green"
     }
 ]
-const [label,setLabel] = useState('')
+
 const handleChange= (e) =>{
-    const labelValue = e.label
-    setLabel({ background: colors.value });
+    const labelValue = e// cuando dan click aqui cambia el background de la nota deacuerdo al array de arriba.
+    setLabel(colors[e].label);
 
     
 }
@@ -44,11 +44,11 @@ const handleChange= (e) =>{
                <ImPriceTag   className="addLabels" size='1em'/>
                </button>
                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
-                  <li><a className="dropdown-item  labelPersonal" value="personal" onChange={handleChange}>Personal</a></li>
-                  <li><a className="dropdown-item  labelWork"     value="work">Work</a></li>
-                  <li><a className="dropdown-item  labelHome"     value="home">Home</a></li>
-                  <li><a className="dropdown-item  labelSocial"   value="social">Social</a></li>
-                  <li><a className="dropdown-item  labelOthers"   value="others">Others</a></li>
+                  <li  onClick={()=> handleChange(0)} value="personal"><a className="dropdown-item  labelPersonal" >Personal</a></li>
+                  <li  onClick={()=> handleChange(1)} value="work"><a className="dropdown-item  labelWork" >Work</a></li>
+                  <li  onClick={()=> handleChange(2)} value="home"><a className="dropdown-item  labelHome">Home</a></li>
+                  <li  onClick={()=> handleChange(3)}><a className="dropdown-item  labelSocial"   value="social">Social</a></li>
+                  <li  onClick={()=> handleChange(4)}><a className="dropdown-item  labelOthers"   value="others">Others</a></li>
              </ul>
          </div>
         </div>
