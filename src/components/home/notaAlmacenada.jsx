@@ -64,7 +64,7 @@ const NotaAlmacenada =({note,deleteNote,setNotas})=>{ //destructurando las propi
                   </div>
                 </div>
               </div>
-              <Optionbar className="noteOption2" />
+             {/*  <Optionbar className="noteOption2" /> */}
             </div>
           </section>
          </>

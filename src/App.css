@@ -60,8 +60,8 @@ img {
   max-width: 100%;
 }
 .menu-option {
-  background-color: #36096d;
-  background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+  background-color: #98d9e1;
+  background-image: linear-gradient(315deg, #98d9e1 0%, #d6aed6 74%);
   height: 100vh;
   width: 220px;
   justify-content: space-between;
@@ -303,6 +303,8 @@ Link {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  white-space: pre-wrap; /*mantiene el espacio que se genero en la nota*/
+  overflow: scroll;
 }
 .orderlyNotes {
   display: flex;

@@ -19,7 +19,7 @@ const CreateNotes = () => {
   
   const [value, setValue] = useState("");
   const [label,setLabel] = useState('rgb(251, 254, 216)'); //declaramos en label el color de la nota,con color inicial 
-
+  const characterLimit = 80;
 
   console.log(value);
   const handleSubmit = (event) => {
@@ -38,6 +38,11 @@ const CreateNotes = () => {
     })
   };
 
+  const handleChange=(e)=>{
+    if(characterLimit - e.target.value.length >=0){
+      setValue(e.target.value);
+    }
+   }
   
  
   return (
@@ -55,10 +60,10 @@ const CreateNotes = () => {
                     cols="10"
                     value={value}
                     style={{background:label}}
-                   onChange={(e) => setValue(e.target.value)}
+                   onChange={handleChange}
                />
              <div className="footerNote">
-                   <small>200 Remaining</small>
+                   <small>{characterLimit - value.length} Remaining</small>
                   <button  type="submit"  className="btn-submit" style={buttonSave}>save</button> 
                  {/*  <Optionbar />  */}
                  <AddLabel  setLabel={setLabel}/>
