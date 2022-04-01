@@ -1,6 +1,6 @@
 import React from "react";
 import {ImPriceTag} from "react-icons/im";
-import { useState } from "react";
+
 
 const StyleButtonLabel={
     borderStyle:"none",
@@ -11,23 +11,23 @@ const AddLabel=({setLabel})=>{
     let colors =[
     {
         value:0,
-        label:"purple",
+        label:"rgb(190, 174, 226)",
     },
     {
         value:1,
-        label:"red",
+        label:"rgb(205, 240, 234)",
     },
     {
         value:2,
-        label:"orange"
+        label:"rgb(249, 249, 249)"
     },
     {
         value:3,
-        label:"blue"
+        label:"rgb(247, 219, 240)"
     },
     {
         value:4,
-        label:"green"
+        label:"rgb(201, 203, 255)"
     }
 ]
 
@@ -47,8 +47,8 @@ const handleChange= (e) =>{
                   <li  onClick={()=> handleChange(0)} value="personal"><a className="dropdown-item  labelPersonal" >Personal</a></li>
                   <li  onClick={()=> handleChange(1)} value="work"><a className="dropdown-item  labelWork" >Work</a></li>
                   <li  onClick={()=> handleChange(2)} value="home"><a className="dropdown-item  labelHome">Home</a></li>
-                  <li  onClick={()=> handleChange(3)}><a className="dropdown-item  labelSocial"   value="social">Social</a></li>
-                  <li  onClick={()=> handleChange(4)}><a className="dropdown-item  labelOthers"   value="others">Others</a></li>
+                  <li  onClick={()=> handleChange(3)} value="social"><a className="dropdown-item  labelSocial" >Social</a></li>
+                  <li  onClick={()=> handleChange(4)} value="others"><a className="dropdown-item  labelOthers">Others</a></li>
              </ul>
          </div>
         </div>

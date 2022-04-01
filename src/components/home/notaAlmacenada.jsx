@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import Optionbar from "./optionbar";
 import { updateNewNote } from "../../firebaseConfi";
 
@@ -54,7 +54,7 @@ const NotaAlmacenada =({note,deleteNote,setNotas})=>{ //destructurando las propi
                           <label  className="col-form-label">Description:</label>
                           <textarea className="form-control"  defaultValue={description}  onChange={(e) => {setTexDescription(e.target.value); setErr(false)}} ></textarea>
                         </div>
-                        {(err === true) && ( <p>campo vacio o no hay modificaciones</p>)} 
+                        {(err === true) && ( <p>Campo vacio o no hay modificaciones</p>)} 
                       </form>
                     </div>
                     <div className="modal-footer">

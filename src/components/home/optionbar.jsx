@@ -6,7 +6,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
  const styleButton={
      borderStyle:"none",
  }
- const Optionbar = ({LastNotesRemove}) =>{
+ const Optionbar = () =>{
      const [sidebar,setSidebar] = useState(false)
      const showSiderBar = () => setSidebar(!sidebar)
      

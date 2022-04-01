@@ -20,7 +20,8 @@ img {
 }
 /* ----- design banner ----- */
 .container-banner {
-  background-color: #310e68;
+  background-color: #36096d;
+  background-image: linear-gradient(315deg, #37d5d6 0%, #36096d 74%);
   height: 23vh;
 }
 .search-icon {
@@ -59,7 +60,8 @@ img {
   max-width: 100%;
 }
 .menu-option {
-  background-color: rgb(167, 153, 183);
+  background-color: #36096d;
+  background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
   height: 100vh;
   width: 220px;
   justify-content: space-between;
@@ -92,6 +94,8 @@ Link {
   border-style: solid;
   text-align: center;
   border-color: rgb(251, 254, 216);
+  background-color: #36096d;
+  background-image: linear-gradient(315deg, #37d5d6 0%, #36096d 74%);
   border-radius: 20px;
   width: 350px;
   height: 500px;
@@ -121,6 +125,8 @@ Link {
 .conteiner-login {
   border-style: solid;
   border-color: rgb(251, 254, 216);
+  background-color: #36096d;
+  background-image: linear-gradient(315deg, #37d5d6 0%, #36096d 74%);
   border-radius: 20px;
   width: 350px;
   height: 500px;
@@ -206,6 +212,8 @@ Link {
 
 .conteiner-signup {
   border: solid rgb(251, 254, 216);
+  background-color: #36096d;
+  background-image: linear-gradient(315deg, #37d5d6 0%, #36096d 74%);
   border-radius: 20px;
   width: 350px;
   height: 500px;

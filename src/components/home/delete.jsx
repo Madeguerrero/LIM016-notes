@@ -9,8 +9,9 @@ import { useEffect } from "react";
 import {deleteNote} from "../../firebaseConfi";
 import {updateNewNote} from "../../firebaseConfi";
 
-const Delete = (props) => {
+const Delete = () => {
   const [notas,setNotas] = useState([]);
+  const {label}= notas
   
     const functionFetch= async()=>{
      const idUser = localStorage.getItem('myid')
@@ -35,8 +36,8 @@ const NoteRemoveForever=(idNote)=>{
 
 const resetNota=(e)=>{
 console.log(e);
-updateNewNote(e,{status: true});
-const arrayNoteReset = [... notas].filter((objectNote)=> objectNote.id !== e);
+updateNewNote(e,{status: true}); //aqui cambiamos el estado de la nota de false a true
+const arrayNoteReset = [... notas].filter((objectNote)=> objectNote.id !== e); // filtramos las notas por status diferente al evento
 setNotas(arrayNoteReset);
 
 }
@@ -47,15 +48,16 @@ return (
       <div className="optionForm">
       <Option />
       <form className="revomeNotes">
-      {notas.map(nota => <section className="sectNoteDelete">
+      {notas.map(nota => <section className="sectNoteDelete"  style={{background:label}} >
              <div key={nota.id} rows="20" cols="20" className="notesObtained">
                <p>{nota.title}</p>
+               <hr></hr>
                 {`${nota.description}`}
             </div>
         <div className="FooterDelete">
         <p className="dateNote">{`${nota.date}`}</p>
-        <IoIosTrash  className="noteDeleteForever" size='1.4em' onClick={() => NoteRemoveForever(nota.id)} />
-        <IoMdSync  className="restoreNote" size='1.4em' onClick={() => resetNota(nota.id)}/>
+        <IoIosTrash  className="noteDeleteForever" size='1.4em' onClick={() => NoteRemoveForever(nota.id)} /> {/* icono de eliminar nota */}
+        <IoMdSync  className="restoreNote" size='1.4em' onClick={() => resetNota(nota.id)}/>{/* icono de resetear el status de la nota  */}
         </div>
         </section>)}
       </form>
@@ -65,12 +67,3 @@ return (
 };
 export default Delete;
 
-/* const [deleteNotes,setDeleteNotes] = useState(false);
-  const NoteDelete=()=>{
-
-  }
-
- const NoteRemoveForever=()=>{
-
- }
- */
