@@ -62,13 +62,16 @@ async function getCities(db) {
   return cityList;
 }
 
-const auth = getAuth();
+export const auth = getAuth();
 // eslint-disable-next-line no-undef
 export const ingresarCorreoContrasenha = (email, password) =>
   signInWithEmailAndPassword(auth, email, password);
 export const crearUsuario = (email, password) =>
   createUserWithEmailAndPassword(auth, email, password);
-
+  
+export const salirSesion = (auth)=>
+  signOut(auth);
+  
 export const ingresoBaseDatos = (nameColection, data) => {
   const collectionReferencia = collection(db, nameColection);
   const funcionAgregar = addDoc(collectionReferencia, data);

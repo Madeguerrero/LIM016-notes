@@ -11,12 +11,12 @@ import {updateNewNote} from "../../firebaseConfi";
 
 const Delete = () => {
   const [notas,setNotas] = useState([]);
-  const {label}= notas
   
     const functionFetch= async()=>{
      const idUser = localStorage.getItem('myid')
      console.log(idUser);
      let notes = await getAllNotes('notas',idUser)
+
       notes = notes.filter((note)=> !note.status)
      console.log("quetal",notes);
      setNotas(notes);
@@ -28,7 +28,7 @@ useEffect(() =>{
 
 const NoteRemoveForever=(idNote)=>{
   deleteNote(idNote).then(()=>{
-    const arrayNoteDelete = [... notas].filter((objectNote)=> objectNote.id !== idNote);
+    const arrayNoteDelete = [...notas].filter((objectNote)=> objectNote.id !== idNote);
     console.log("funciona",arrayNoteDelete);
     setNotas(arrayNoteDelete);
   })
@@ -37,19 +37,19 @@ const NoteRemoveForever=(idNote)=>{
 const resetNota=(e)=>{
 console.log(e);
 updateNewNote(e,{status: true}); //aqui cambiamos el estado de la nota de false a true
-const arrayNoteReset = [... notas].filter((objectNote)=> objectNote.id !== e); // filtramos las notas por status diferente al evento
+const arrayNoteReset = [...notas].filter((objectNote)=> objectNote.id !== e); // filtramos las notas por status diferente al evento
 setNotas(arrayNoteReset);
 
 }
-  
+
 return (
     <section className="container-banner">
       <Banner />
       <div className="optionForm">
       <Option />
-      <form className="revomeNotes">
-      {notas.map(nota => <section className="sectNoteDelete"  style={{background:label}} >
-             <div key={nota.id} rows="20" cols="20" className="notesObtained">
+      <div className="revomeNotes">
+      {notas.map(nota => <section key={nota.id} className="sectNoteDelete" style={{background:nota.label}}  >
+             <div  rows="20" cols="20" className="notesObtained">
                <p>{nota.title}</p>
                <hr></hr>
                 {`${nota.description}`}
@@ -60,7 +60,7 @@ return (
         <IoMdSync  className="restoreNote" size='1.4em' onClick={() => resetNota(nota.id)}/>{/* icono de resetear el status de la nota  */}
         </div>
         </section>)}
-      </form>
+      </div>
       </div>
     </section>
   );
