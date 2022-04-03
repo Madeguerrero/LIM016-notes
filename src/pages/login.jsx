@@ -26,7 +26,7 @@ function Login() {
         const user = userCredential.user;
         // ...
         console.log(user.uid);
-        localStorage.setItem("myid", user.uid);
+        sessionStorage.setItem("myid", user.uid);
         navigate("/createnotes");
       })
       .catch((error) => {

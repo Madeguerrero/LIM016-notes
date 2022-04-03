@@ -64,13 +64,12 @@ async function getCities(db) {
 
 export const auth = getAuth();
 // eslint-disable-next-line no-undef
-export const ingresarCorreoContrasenha = (email, password) =>
-  signInWithEmailAndPassword(auth, email, password);
+export const ingresarCorreoContrasenha = (email, password) => // dos parámetros que van a cambiar
+  signInWithEmailAndPassword(auth, email, password); //recibe al auth como primer parámetro, es algo estático
 export const crearUsuario = (email, password) =>
   createUserWithEmailAndPassword(auth, email, password);
   
-export const salirSesion = (auth)=>
-  signOut(auth);
+export const salirSesion = ()=> signOut(auth);
   
 export const ingresoBaseDatos = (nameColection, data) => {
   const collectionReferencia = collection(db, nameColection);

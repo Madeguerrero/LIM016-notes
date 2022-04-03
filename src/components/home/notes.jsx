@@ -14,7 +14,7 @@ const Notes = () => {
   const [notas, setNotas] = useState([]);
 
   const functionFetch = async () => {
-    const idUser = localStorage.getItem('myid')
+    const idUser = sessionStorage.getItem('myid')
     console.log(idUser);
     let notes = await getAllNotes('notas', idUser)
     notes = notes.filter((note) => note.status)

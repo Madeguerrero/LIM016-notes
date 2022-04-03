@@ -32,7 +32,7 @@ const CreateNotes = () => {
       status: true,
       description: value,
       date: date.toLocaleDateString(),
-      creator: localStorage.getItem("myid")
+      creator: sessionStorage.getItem("myid")
     }).then((doc) => {
       console.log(doc.id);
     })
