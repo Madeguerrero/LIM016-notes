@@ -20,6 +20,10 @@ const styleTextField = {
   padding: "none",
 
 };
+const styleCreate ={
+  textDecoration: "none",
+  color:"white",
+}
 
 const SignUp = () => {
   // const classes = useStyles();
@@ -94,7 +98,7 @@ const SignUp = () => {
           />
 
           <button className="button-sign" onClick={userRegister}>
-            Create Account
+          <Link to="/login" style={styleCreate}>  Create Account</Link>
           </button>
           <p className="p-count">
             Already have account? &nbsp;

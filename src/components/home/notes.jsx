@@ -40,7 +40,7 @@ const Notes = () => {
 
   return (
     <section className="container-banner">
-      <Banner />
+      <Banner  notas={notas}/>
       <div className="optionForm">
         <Option />
         <form className="orderlyNotes" >

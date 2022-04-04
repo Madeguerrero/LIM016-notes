@@ -3,11 +3,11 @@ import Banner from "./banner";
 import Option from "./option";
 import { useState } from "react";
 import {IoMdSync} from "react-icons/io";
-import {IoIosTrash} from "react-icons/io";
 import { getAllNotes } from "../../firebaseConfi";
 import { useEffect } from "react";
 import {deleteNote} from "../../firebaseConfi";
 import {updateNewNote} from "../../firebaseConfi";
+import {RiDeleteBin6Line} from "react-icons/ri";
 
 const Delete = () => {
   const [notas,setNotas] = useState([]);
@@ -56,7 +56,7 @@ return (
             </div>
         <div className="FooterDelete">
         <p className="dateNote">{`${nota.date}`}</p>
-        <IoIosTrash  className="noteDeleteForever" size='1.4em' onClick={() => NoteRemoveForever(nota.id)} /> {/* icono de eliminar nota */}
+        <RiDeleteBin6Line  className="noteDeleteForever" size='1.4em' onClick={() => NoteRemoveForever(nota.id)} /> {/* icono de eliminar nota */}
         <IoMdSync  className="restoreNote" size='1.4em' onClick={() => resetNota(nota.id)}/>{/* icono de resetear el status de la nota  */}
         </div>
         </section>)}

@@ -51,8 +51,8 @@ function Login() {
           <button onClick={loginUser} className="login-button">
             <Link to="/home" style={loginStyleButton}> Login</Link>
           </button>
-          <p className="paragraph2">or create account using social media</p>
-          <button className="google-button">Log in with Google</button>
+          {/* <p className="paragraph2">or create account using social media</p>
+          <button className="google-button">Log in with Google</button> */}
           <p className="paragraph2">
             Don't have account?
             <a href="signup" className="navSignup">

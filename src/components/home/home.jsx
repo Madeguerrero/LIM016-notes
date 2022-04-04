@@ -8,7 +8,7 @@ const Home = () => {
   
   return (
     <section className="container-banner">
-      <Banner />
+      <Banner show={"none"}/>
       <Option />
       </section>
   );

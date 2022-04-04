@@ -6,7 +6,7 @@ import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 import Signout from "./signout";
-import SignUp from "../../pages/signup";
+
 
 const linkStyle = {
   textDecoration: "none",
@@ -21,9 +21,7 @@ const Option = () => {
       <div className="menu-option">
         <br></br>
         <div className="user">
-          <h4>
-          <FontAwesomeIcon icon={faUser} />
-          Welcome</h4>
+          <FontAwesomeIcon icon={faUser}  style={linkStyle}/><p className="welcome">Welcome</p>
         </div>
         <br></br>
         <div className="settings">
@@ -42,7 +40,7 @@ const Option = () => {
         <div className="notes">
           <FontAwesomeIcon icon={faFileLines}/>
           <Link to="/notes" style={linkStyle}>
-             Notes
+            Notes
           </Link>
         </div>
         <br></br>

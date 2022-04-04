@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import Optionbar from "./optionbar";
 import { updateNewNote } from "../../firebaseConfi";
+import {RiDeleteBin6Line} from "react-icons/ri";
+import { RiEditBoxLine } from "react-icons/ri";
 
 
 
@@ -36,8 +38,8 @@ const NotaAlmacenada =({note,deleteNote,setNotas})=>{ //destructurando las propi
             </div>
             <div className="FooterNotes2">
               <p className="dateNote">{`${date}`}</p>
-              <button type="button" onClick={() => deleteNote(id)}>delete</button>
-              <button type="button" className="btn" data-bs-toggle="modal" data-bs-target={"#exampleModal"+id}  data-bs-whatever="@fat" onClick={() =>  setOcultarModal(true)} >Edit</button>
+              <RiDeleteBin6Line className="noteDeleteForever" size='1.4em' onClick={() => deleteNote(id)}/>
+              <button type="button" className="btn" data-bs-toggle="modal" data-bs-target={"#exampleModal"+id}  data-bs-whatever="@fat" onClick={() =>  setOcultarModal(true)} ><RiEditBoxLine size='1.4em' /></button>
               <div className="modal fade" id={"exampleModal"+id}  tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                   <div className="modal-content">

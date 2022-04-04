@@ -20,8 +20,13 @@ img {
 }
 /* ----- design banner ----- */
 .container-banner {
-  background-color: #36096d;
-  background-image: linear-gradient(315deg, #37d5d6 0%, #36096d 74%);
+  background: rgb(18, 32, 99);
+  background: linear-gradient(
+    90deg,
+    rgba(18, 32, 99, 1) 16%,
+    rgba(82, 32, 108, 1) 71%,
+    rgba(158, 169, 240, 1) 100%
+  );
   height: 23vh;
 }
 .search-icon {
@@ -47,39 +52,37 @@ img {
 .banner {
   height: 100%;
 }
-
-/*#faMagnifyingGlass {
-  display: flex;
-  max-width: 100px;
-  color: rgb(156, 156, 158);
-  float: right;
-}*/
 /* ------- design options --------*/
 .conteiner-option {
   flex-direction: column;
   max-width: 100%;
 }
 .menu-option {
-  background-color: #98d9e1;
-  background-image: linear-gradient(315deg, #98d9e1 0%, #d6aed6 74%);
+  background: rgb(204, 193, 255);
   height: 100vh;
   width: 220px;
   justify-content: space-between;
 }
 .create {
-  margin-left: 10px;
+  margin-left: 15px;
 }
 .notes {
-  margin-left: 10px;
+  margin-left: 15px;
+  margin-right: 8px;
 }
 .bin {
-  margin-left: 10px;
+  margin-left: 15px;
 }
 .settings {
   margin-left: 10px;
 }
 .user {
-  margin-left: 10px;
+  margin-left: 7px;
+  display: flex;
+  align-items: flex-start;
+}
+.welcome {
+  margin-top: 8px;
 }
 
 Link {
@@ -94,8 +97,12 @@ Link {
   border-style: solid;
   text-align: center;
   border-color: rgb(251, 254, 216);
-  background-color: #36096d;
-  background-image: linear-gradient(315deg, #37d5d6 0%, #36096d 74%);
+  background: rgb(18, 32, 99);
+  background: linear-gradient(
+    180deg,
+    rgba(18, 32, 99, 1) 16%,
+    rgba(82, 32, 108, 1) 71%
+  );
   border-radius: 20px;
   width: 350px;
   height: 500px;
@@ -125,8 +132,12 @@ Link {
 .conteiner-login {
   border-style: solid;
   border-color: rgb(251, 254, 216);
-  background-color: #36096d;
-  background-image: linear-gradient(315deg, #37d5d6 0%, #36096d 74%);
+  background: rgb(18, 32, 99);
+  background: linear-gradient(
+    180deg,
+    rgba(18, 32, 99, 1) 16%,
+    rgba(82, 32, 108, 1) 71%
+  );
   border-radius: 20px;
   width: 350px;
   height: 500px;
@@ -174,7 +185,8 @@ Link {
   border-radius: 10px;
   width: 250px;
   height: 30px;
-  margin-bottom: 10px;
+  margin-top: 40px;
+  margin-bottom: 50px;
 }
 .login {
   width: 100%;
@@ -191,7 +203,7 @@ Link {
   border: solid rgb(251, 254, 216);
   border-radius: 10px;
   background: rgb(251, 254, 216);
-  color: rgb(156, 156, 158);
+  color: rgb(57, 57, 59);
   margin-bottom: 15px;
   width: 250px;
   height: 30px;
@@ -201,7 +213,7 @@ Link {
   border: solid rgb(251, 254, 216);
   border-radius: 10px;
   background: rgb(251, 254, 216);
-  color: rgb(156, 156, 158);
+  color: rgb(57, 57, 59);
   margin-bottom: 10px;
   width: 250px;
   height: 30px;
@@ -212,8 +224,12 @@ Link {
 
 .conteiner-signup {
   border: solid rgb(251, 254, 216);
-  background-color: #36096d;
-  background-image: linear-gradient(315deg, #37d5d6 0%, #36096d 74%);
+  background: rgb(18, 32, 99);
+  background: linear-gradient(
+    180deg,
+    rgba(18, 32, 99, 1) 16%,
+    rgba(82, 32, 108, 1) 71%
+  );
   border-radius: 20px;
   width: 350px;
   height: 500px;
@@ -281,16 +297,6 @@ Link {
 }
 
 /* -------- notes -------- */
-/* .notesObtained {
-  border-style: none;
-  padding: 1rem;
-  border-radius: 10px;
-  width: 200px;
-  height: 350px;
-  margin: 10px;
-  background-color: rgb(251, 254, 216);
-  border-style: double;
-} */
 .sectNotes {
   border-style: none;
   padding: 1rem;
@@ -322,6 +328,7 @@ Link {
 }
 .dateNote {
   font-size: small;
+  margin-bottom: 0px;
 }
 .dropdown-save {
   text-decoration: none;
@@ -388,7 +395,22 @@ Link {
   align-items: center;
   justify-content: space-between;
 }
+.revomeNotes {
+  display: flex;
+  flex-wrap: wrap;
+  height: 350px;
+}
 /* ---------- addlabel --------*/
 .labelPersonal {
   border-color: blueviolet;
+}
+.botonLogout {
+  cursor: pointer;
+}
+/* --------- logout --------- */
+.logout {
+  margin-left: 5px;
+}
+.iconLogout {
+  margin-right: 7px;
 }
