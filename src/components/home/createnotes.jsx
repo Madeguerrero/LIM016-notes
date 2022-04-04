@@ -47,7 +47,7 @@ const CreateNotes = () => {
  
   return (
     <section className="container-banner">
-      <Banner />
+      <Banner show={"none"}/>
       <div className="optionForm">
         <Option />
       <form onSubmit={handleSubmit} className="form CreateNotes" style={{background:label}}>

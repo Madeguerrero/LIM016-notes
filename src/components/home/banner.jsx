@@ -4,12 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 
-const Banner = () => {
+const Banner = ({show}) => {
   return (
     <div className="banner">
       <img src={logo} alt="imagenDeLogo" id="img_banner"></img>
       <div className="search-icon">
-        <input type="search" placeholder="Search by title " id="search"></input>
+        <input type="search" placeholder="Search by title " id="search" style={{display:show}}></input>
         <FontAwesomeIcon icon={faMagnifyingGlass} className="icon" />
       </div>
     </div>

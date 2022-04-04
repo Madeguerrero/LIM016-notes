@@ -22,9 +22,9 @@ const Signout = () =>{
     //const exit = limpiar secion localStoragesignout del firebaseConfi
 
   return (
-         <div>
-            <RiLogoutBoxRLine/> Logout 
-            <button onClick={exitSesion}>Logout</button>
+         <div >
+            <RiLogoutBoxRLine onClick={exitSesion}/> <span onClick={exitSesion}> Logout</span>
+         
              
             </div>
 

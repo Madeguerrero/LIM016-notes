@@ -27,7 +27,7 @@ function Login() {
         // ...
         console.log(user.uid);
         sessionStorage.setItem("myid", user.uid);
-        navigate("/createnotes");
+        navigate("/home");
       })
       .catch((error) => {
         const errorCode = error.code;
