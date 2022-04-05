@@ -31,7 +31,7 @@ const NotaAlmacenada =({note,deleteNote,setNotas})=>{ //destructurando las propi
     return (
         <> 
         <section className="sectNotes" style={{background:label}}>
-            <div key={id} rows="20" cols="20" className="notesObtained" >
+            <div  rows="20" cols="20" className="notesObtained" >
               <p>{title}</p>
               <hr></hr>
               {`${texDescription}`}

@@ -12,14 +12,18 @@ import NotaAlmacenada from "./notaAlmacenada";
 
 const Notes = () => {
   const [notas, setNotas] = useState([]);
+  const [searchText,setSearchText]=useState([]);
 
   const functionFetch = async () => {
     const idUser = sessionStorage.getItem('myid')
     console.log(idUser);
     let notes = await getAllNotes('notas', idUser)
     notes = notes.filter((note) => note.status)
-    console.log("quetal", notes);
+    //console.log("quetal", notes);
     setNotas(notes);
+    
+    setSearchText(notes);
+    
   }
 
   useEffect(() => {
@@ -39,14 +43,14 @@ const Notes = () => {
   }
 
   return (
-    <section className="container-banner">
-      <Banner  notas={notas}/>
+    <section className="container-banner" >
+      <Banner  searchText={searchText}  setNotas={setNotas}/>  {/* tiene el valor de las notas copiadas */}
       <div className="optionForm">
         <Option />
-        <form className="orderlyNotes" >
+        <div className="orderlyNotes" >
           {notas.map(nota => 
-          <NotaAlmacenada note={nota}  deleteNote={notesRemove}/>)}
-        </form>
+          <NotaAlmacenada note={nota}  deleteNote={notesRemove} key= {nota.id}/>)}
+        </div>
       </div>
     </section>
   );

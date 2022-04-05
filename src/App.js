@@ -10,8 +10,8 @@ import {Routes, Route, useNavigate } from "react-router-dom";
 function DashboardRoutes() {
   const navigate=useNavigate()
   useEffect(()=>{
-    if(sessionStorage.length===0){
-        navigate('/');
+    if(sessionStorage.length===1 || sessionStorage.length===0){
+              navigate('/');
     };
 },[])
 
